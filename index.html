@@ -1,0 +1,1314 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Schemaarbeit im Therapieverlauf: pseudonyme Klientenprofile, Schema-Bild, Gedanken und Affekt, Konsequenzen.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cg fill='none' stroke='%232d5f5a' stroke-width='28' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='256' cy='256' r='240'/%3E%3Cpath d='M101 153V262q0 14 14 14H205q14 0 14 14V436'/%3E%3Cpath d='M411 153V262q0 14-14 14H307q-14 0-14 14V436'/%3E%3Cpath d='M256 168V436'/%3E%3C/g%3E%3C/svg%3E">
+<style>
+:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}
+img{max-width:100%}
+[hidden]:not([hidden=until-found i]){display:none!important}
+</style>
+</head>
+<body>
+<title>Therapie – Praxis Gebauer</title>
+<meta name="theme-color" content="#2d5f5a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+:root{
+  --ground:#edf1ef; --surface:#ffffff; --surface-2:#f5f8f7; --line:#d5dedb;
+  --ink:#1b2a29; --ink-2:#4d5e5b; --ink-3:#778784;
+  --accent:#2d5f5a; --accent-ink:#ffffff; --accent-soft:#dbe9e6;
+  --brand:#17393a;
+  --c-skn:#a83c57; --c-skp:#2f7d4f; --c-bkn:#43539f; --c-bkp:#1f8a70;
+  --c-norm:#97650f; --c-regel:#7e4494;
+  --bub-self-bg:#fdf4f6; --bub-rel-bg:#f3f5fd;
+  --ok-bg:#e3f0e6; --ok-ink:#23583a; --warn-bg:#fbefd6; --warn-ink:#7a4d00;
+  --crit-bg:#fadcdc; --crit-ink:#9b1c1c; --crit:#c62828;
+  --ink-paper:#1b2a29;
+  --radius:14px;
+  --font:"Atkinson Hyperlegible",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#111716; --surface:#19211f; --surface-2:#1f2826; --line:#2f3b39;
+    --ink:#e5eeec; --ink-2:#aebdba; --ink-3:#83938f;
+    --accent:#7fb8b0; --accent-ink:#0f1a18; --accent-soft:#233532; --brand:#cfe3df;
+    --c-skn:#e98aa0; --c-skp:#7fc99b; --c-bkn:#9aa8ef; --c-bkp:#5fc0a8;
+    --c-norm:#e0b45c; --c-regel:#cf9be0;
+    --bub-self-bg:#271a1f; --bub-rel-bg:#1b1f2e;
+    --ok-bg:#1d3326; --ok-ink:#9fd6b0; --warn-bg:#3a2e12; --warn-ink:#f0c46a;
+    --crit-bg:#431c1c; --crit-ink:#ff9b9b; --crit:#ef5350;
+    --ink-paper:#e5eeec;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#111716; --surface:#19211f; --surface-2:#1f2826; --line:#2f3b39;
+  --ink:#e5eeec; --ink-2:#aebdba; --ink-3:#83938f;
+  --accent:#7fb8b0; --accent-ink:#0f1a18; --accent-soft:#233532; --brand:#cfe3df;
+  --c-skn:#e98aa0; --c-skp:#7fc99b; --c-bkn:#9aa8ef; --c-bkp:#5fc0a8;
+  --c-norm:#e0b45c; --c-regel:#cf9be0;
+  --bub-self-bg:#271a1f; --bub-rel-bg:#1b1f2e;
+  --ok-bg:#1d3326; --ok-ink:#9fd6b0; --warn-bg:#3a2e12; --warn-ink:#f0c46a;
+  --crit-bg:#431c1c; --crit-ink:#ff9b9b; --crit:#ef5350;
+  --ink-paper:#e5eeec;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{background:var(--ground);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.5;
+  padding-inline:16px;-webkit-tap-highlight-color:transparent}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+h1,h2,h3,h4{text-wrap:balance;margin:0;line-height:1.2}
+p{margin:0}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--ink-2)}
+.eyebrow{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);font-weight:700}
+.btn{border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:.5rem .9rem;min-height:44px;display:inline-flex;align-items:center;gap:7px}
+.btn:hover{border-color:var(--ink-3)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);font-weight:700}
+.btn.ghost{background:transparent;border-color:transparent;color:var(--ink-2)}
+.btn.small{min-height:36px;padding:.25rem .65rem;font-size:.88rem;border-radius:9px}
+.btn.danger{color:var(--crit-ink)}
+.btn:disabled{opacity:.45;cursor:default}
+.field{border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:.55rem .75rem;min-height:44px;width:100%}
+textarea.field{min-height:92px;resize:vertical;line-height:1.45}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.spread{display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius)}
+.chip{display:inline-flex;align-items:center;gap:5px;border-radius:999px;padding:1px 10px;font-size:.78rem;font-weight:700;white-space:nowrap}
+.neutral{background:var(--surface-2);color:var(--ink-2);border:1px solid var(--line)}
+.st-hyp{background:var(--surface-2);color:var(--ink-2);border:1px solid var(--line)}
+.st-best{background:var(--accent-soft);color:var(--accent)}
+.st-arb{background:var(--warn-bg);color:var(--warn-ink)}
+.st-ver{background:var(--ok-bg);color:var(--ok-ink)}
+.cat-chip{border-radius:7px;padding:1px 8px;font-family:var(--mono);font-size:.8rem;font-weight:500;
+  border:1.5px solid currentColor;white-space:nowrap}
+.c-skn{color:var(--c-skn)} .c-skp{color:var(--c-skp)} .c-bkn{color:var(--c-bkn)}
+.c-bkp{color:var(--c-bkp)} .c-norm{color:var(--c-norm)} .c-regel{color:var(--c-regel)}
+
+/* ---------- Rahmen ---------- */
+.wrap{max-width:1280px;margin:0 auto;padding-block:16px 48px;display:flex;flex-direction:column;gap:16px}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:1.2rem;letter-spacing:.02em;color:var(--brand)}
+.logo{width:40px;height:40px;color:var(--brand);flex:none}
+.brand .app{color:var(--ink-3);font-weight:400;font-size:1rem;border-left:1px solid var(--line);padding-left:12px}
+.tabs{display:flex;gap:4px;background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:4px;flex-wrap:wrap}
+.tabs button{border:0;background:transparent;border-radius:8px;padding:.4rem .85rem;min-height:40px;color:var(--ink-2)}
+.tabs button[aria-selected="true"]{background:var(--surface);color:var(--ink);font-weight:700;box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.layout{display:grid;grid-template-columns:270px minmax(0,1fr);gap:16px;align-items:start}
+@media (max-width:900px){.layout{grid-template-columns:1fr}}
+.side{display:flex;flex-direction:column}
+.side-head{padding:14px;display:flex;flex-direction:column;gap:10px;border-bottom:1px solid var(--line)}
+.add-row{display:flex;gap:8px}
+.add-row input{flex:1;min-width:0;text-transform:uppercase;font-family:var(--mono)}
+.clist{list-style:none;margin:0;padding:6px;max-height:68vh;overflow:auto}
+.clist button{width:100%;border:0;background:transparent;text-align:left;border-radius:10px;padding:9px 10px;display:flex;flex-direction:column;gap:2px}
+.clist button:hover{background:var(--surface-2)}
+.clist button[aria-current="true"]{background:var(--accent-soft)}
+.clist .code{font-family:var(--mono);font-weight:500;font-size:1.02rem}
+.clist .sub{font-size:.8rem;color:var(--ink-3);display:flex;gap:8px;flex-wrap:wrap}
+.empty{padding:26px;color:var(--ink-2)}
+.detail{padding:18px 20px 24px;display:flex;flex-direction:column;gap:18px}
+.detail-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+.detail-head h2{font-family:var(--mono);font-weight:500;font-size:1.75rem;letter-spacing:.05em}
+.subtabs{display:flex;gap:2px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.subtabs button{border:0;background:transparent;padding:.5rem .8rem;min-height:42px;color:var(--ink-2);
+  border-bottom:3px solid transparent;margin-bottom:-1px;border-radius:8px 8px 0 0}
+.subtabs button[aria-selected="true"]{color:var(--ink);font-weight:700;border-bottom-color:var(--accent)}
+.note{background:var(--warn-bg);color:var(--warn-ink);border-radius:11px;padding:9px 13px;font-size:.88rem}
+
+/* ---------- Schema-Bild ---------- */
+.bild{display:grid;grid-template-columns:minmax(0,1fr) 250px;gap:18px;align-items:start}
+@media (max-width:980px){.bild{grid-template-columns:1fr}}
+.scene{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.figure{width:104px;flex:none;color:var(--ink-paper);transform:translateY(26%)}
+.figure svg{width:100%;height:auto;display:block}
+.bubbles{flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:10px}
+.brow{display:flex;align-items:center;gap:8px}
+.dots{display:flex;flex:none}
+.dots i{display:block;border:2.2px solid var(--bub-line,var(--ink-paper));border-radius:50%;background:var(--surface);margin-block:3px}
+.dots i:nth-child(1){width:6px;height:6px}
+.dots i:nth-child(2){width:9px;height:9px;margin-left:6px}
+.dots i:nth-child(3){width:13px;height:13px;margin-left:13px}
+.brow.up .dots{flex-direction:column-reverse;align-self:flex-end;padding-bottom:6px}
+.brow.down .dots{flex-direction:column;align-self:flex-start;padding-top:6px}
+.brow.up{--bub-line:var(--c-skn)}
+.brow.down{--bub-line:var(--c-bkn)}
+.cloud{position:relative;flex:1 1 260px;min-width:0;min-height:190px;display:flex;align-items:center;justify-content:center;padding:58px 80px}
+.cloud svg{position:absolute;inset:0;width:100%;height:100%}
+.cloud .fill{fill:var(--bub-bg);stroke:var(--bub-line);stroke-width:2.2;stroke-linejoin:round}
+.cloud[data-bub="self"]{--bub-line:var(--c-skn);--bub-bg:var(--bub-self-bg)}
+.cloud[data-bub="rel"]{--bub-line:var(--c-bkn);--bub-bg:var(--bub-rel-bg)}
+.cloud-inner{position:relative;display:flex;flex-direction:column;gap:11px;width:100%;max-width:330px}
+.cloud-cap{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;
+  text-align:center;color:var(--bub-line);margin-bottom:1px}
+.thought{display:flex;flex-direction:column;gap:3px;color:var(--bub-line)}
+.thought .lab{font-family:var(--mono);font-size:.82rem;font-weight:500;letter-spacing:.08em;padding-left:2px}
+.thought .box{border:2px solid currentColor;border-radius:5px;background:var(--surface);padding:7px 11px;
+  width:100%;text-align:left;font-size:.99rem;line-height:1.35;min-height:46px;color:var(--ink);
+  display:flex;flex-direction:column;gap:4px;transition:box-shadow .12s}
+.thought .box:hover{box-shadow:0 2px 0 0 var(--bub-line)}
+.thought .box em{font-style:normal;color:var(--ink-3);font-size:.9rem}
+.thought .box .more{font-size:.86rem;color:var(--ink-2);border-top:1px dashed var(--line);padding-top:4px}
+@media (max-width:560px){.cloud{padding:46px 40px;min-height:172px}.figure{width:78px;transform:none}.cloud-cap{font-size:.64rem}}
+/* Gedanken & Affekt */
+.gaflow{display:grid;grid-template-columns:minmax(0,1fr) 92px minmax(0,1fr);gap:0 10px;align-items:start;margin-top:2px}
+.arrow-in{grid-column:3;grid-row:1;color:var(--ink-paper);width:74px;justify-self:start;margin-left:8%}
+.arrow-in svg,.arrow-left svg{width:100%;height:auto;display:block}
+.arrow-left{grid-column:2;grid-row:2;color:var(--ink-paper);align-self:start;margin-top:26px}
+.ga{display:flex;flex-direction:column;gap:7px}
+.ga.ged{grid-column:1;grid-row:2;color:var(--accent)}
+.ga.aff{grid-column:3;grid-row:2;color:var(--c-norm)}
+.ga h4{font-family:var(--mono);font-size:.92rem;letter-spacing:.12em;text-transform:uppercase;
+  border-bottom:2px solid currentColor;padding-bottom:3px;align-self:flex-start}
+.ga ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:3px}
+.ga li{display:flex;gap:8px;align-items:baseline;font-size:.97rem;color:var(--ink);line-height:1.35}
+.ga li::before{content:"\2013";color:currentColor;flex:none}
+.ga li .x{margin-left:auto;opacity:0;flex:none;min-height:26px;padding:0 6px}
+.ga li:hover .x,.ga li:focus-within .x{opacity:1}
+.ga form{display:flex;gap:6px;margin-top:5px;max-width:340px}
+.ga form input{min-height:38px;padding:.25rem .6rem;font-size:.92rem}
+.ga form button{min-height:38px}
+@media (max-width:760px){
+  .gaflow{grid-template-columns:1fr;gap:6px}
+  .arrow-in{grid-column:1;grid-row:1;margin-left:4px;width:58px}
+  .ga.aff{grid-column:1;grid-row:2}
+  .arrow-left{grid-column:1;grid-row:3;margin:10px 0;justify-self:center;transform:rotate(90deg);width:66px}
+  .ga.ged{grid-column:1;grid-row:4}
+  .ga li .x{opacity:1}
+}
+.side-boxes{display:flex;flex-direction:column;gap:26px;padding-top:8px}
+.sbox .cap{display:inline-block;border:2px solid var(--ink-paper);border-radius:3px;padding:1px 12px;
+  font-family:var(--mono);font-size:.9rem;letter-spacing:.08em;margin-bottom:8px}
+.sbox ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.sbox li{font-size:.95rem;display:flex;gap:7px;align-items:baseline}
+.sbox li::before{content:"\2013";color:var(--ink-3);flex:none}
+.sbox .stem{font-size:.88rem;color:var(--ink-3);margin-bottom:6px;font-style:italic}
+.bild-foot{display:flex;gap:10px;flex-wrap:wrap;align-items:center;border-top:1px solid var(--line);padding-top:14px;margin-top:14px}
+
+/* ---------- Schemata ---------- */
+.catgrid{display:flex;flex-direction:column;gap:20px}
+.catsec{display:flex;flex-direction:column;gap:9px}
+.catsec > header{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;
+  padding-bottom:5px;border-bottom:2px solid currentColor}
+.catsec > header h3{font-size:1.05rem;color:var(--ink);display:flex;align-items:center;gap:9px}
+.catsec > header .stem{font-size:.86rem;color:var(--ink-3);font-style:italic}
+.card{border:1px solid var(--line);border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:8px;background:var(--surface)}
+.card.lead{border-color:currentColor;box-shadow:inset 3px 0 0 currentColor}
+.card .txt{font-size:1.05rem;color:var(--ink);line-height:1.35}
+.card .meta{display:flex;gap:8px;flex-wrap:wrap;align-items:center;font-size:.82rem;color:var(--ink-3)}
+.card .ev{font-size:.9rem;color:var(--ink-2);border-left:2px solid var(--line);padding-left:10px}
+.card .alt{font-size:.95rem;color:var(--c-skp);border-left:2px solid var(--c-skp);padding-left:10px}
+.card .acts{display:flex;gap:4px;flex-wrap:wrap}
+.hist{font-size:.86rem;color:var(--ink-2)}
+.hist summary{cursor:pointer;color:var(--ink-3)}
+.hist ol{margin:6px 0 0;padding-left:1.2em;display:flex;flex-direction:column;gap:3px}
+.cons-list{display:flex;flex-direction:column;gap:5px;margin-top:2px}
+.cons{display:flex;gap:9px;align-items:baseline;font-size:.95rem;padding:5px 0;border-top:1px dashed var(--line)}
+.cons .k{font-size:.74rem;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-3);flex:none;width:118px;font-weight:700}
+@media (max-width:620px){.cons{flex-direction:column;gap:2px}.cons .k{width:auto}}
+.cons .del{margin-left:auto;flex:none}
+
+/* ---------- Motive ---------- */
+.motive{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+.mot{border:1px solid var(--line);border-radius:12px;padding:11px 13px;display:flex;flex-direction:column;gap:7px}
+.mot .nm{font-weight:700}
+.mot .ds{font-size:.85rem;color:var(--ink-3)}
+.seg{display:flex;gap:4px}
+.seg button{flex:1;min-width:38px;height:40px;border-radius:9px;border:1px solid var(--line);background:var(--surface);font-family:var(--mono)}
+.seg button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);font-weight:700}
+.picker{display:flex;gap:8px;flex-wrap:wrap}
+.pick{border:1px solid var(--line);border-radius:999px;padding:.35rem .9rem;background:var(--surface);min-height:40px}
+.pick[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent);color:var(--accent);font-weight:700}
+
+/* ---------- Bibliothek ---------- */
+.lib{display:flex;flex-direction:column;gap:14px;padding:18px 20px 26px}
+.libgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:14px}
+.libcard{border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:10px;background:var(--surface)}
+.libcard h3{font-size:1.1rem}
+.libcard .grp{display:flex;flex-direction:column;gap:4px}
+.libcard .grp .eyebrow{color:var(--ink-3)}
+.libcard ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px;font-size:.93rem}
+.libcard li{display:flex;gap:8px;align-items:flex-start}
+.libcard li .t{flex:1}
+.ratings{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:4px 14px;font-size:.86rem}
+.ratings div{display:flex;justify-content:space-between;gap:8px;border-bottom:1px dotted var(--line);padding:2px 0}
+.ratings b{font-family:var(--mono);font-weight:500;color:var(--ink-2)}
+
+/* ---------- Verlauf ---------- */
+.log{display:flex;flex-direction:column;gap:2px}
+.logday{display:grid;grid-template-columns:110px minmax(0,1fr);gap:12px;padding:8px 0;border-top:1px solid var(--line)}
+@media (max-width:560px){.logday{grid-template-columns:1fr;gap:2px}}
+.logday .d{font-family:var(--mono);font-size:.85rem;color:var(--ink-3)}
+.logday ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:5px;font-size:.94rem}
+.logday li{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+
+/* ---------- Modal / Toast ---------- */
+.scrim{position:fixed;inset:0;background:rgba(10,20,19,.55);display:flex;align-items:flex-start;justify-content:center;
+  padding:24px 16px;overflow:auto;z-index:30}
+.sheet{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);max-width:620px;width:100%;
+  padding:20px;display:flex;flex-direction:column;gap:14px;box-shadow:0 18px 50px rgba(0,0,0,.28);margin-block:auto}
+.sheet h3{font-size:1.2rem}
+.fieldset{display:flex;flex-direction:column;gap:5px}
+.fieldset label{font-size:.85rem;color:var(--ink-2);font-weight:700}
+.fieldset .help{font-size:.82rem;color:var(--ink-3)}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);
+  background:var(--ink);color:var(--ground);padding:10px 16px;border-radius:10px;font-weight:700;z-index:40}
+.pin-card{max-width:380px;margin:12vh auto 0;padding:24px;display:flex;flex-direction:column;gap:14px}
+.pin-card input{font-family:var(--mono);font-size:1.5rem;letter-spacing:.3em;text-align:center}
+.msg{min-height:1.5em;color:var(--crit-ink);font-weight:700;font-size:.9rem}
+.settings{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:14px;padding:18px 20px 26px}
+.settings section{display:flex;flex-direction:column;gap:9px;border:1px solid var(--line);border-radius:12px;padding:15px}
+.settings h3{font-size:1.02rem}
+.settings p{font-size:.9rem;color:var(--ink-2)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+@media print{
+  body{background:#fff;padding:0}
+  .topbar,.tabs,.side,.subtabs,.bild-foot,.btn,.toast{display:none!important}
+  .layout{grid-template-columns:1fr}
+  .panel{border:0}
+  .cloud .fill{fill:#fff;stroke:#000}
+}
+</style>
+
+<div id="app"></div>
+<div id="modal"></div>
+<div id="toast" class="toast" role="status" hidden></div>
+
+<script>
+(() => {
+"use strict";
+
+/* =========================================================
+   Konzeptrahmen: Klärungsorientierte Psychotherapie (Sachse)
+   ========================================================= */
+
+const CATS = [
+  {k:"sk-",   n:"Selbstkonzept negativ",    short:"SK−",   cls:"c-skn",   stem:"Ich bin … / Ich kann …"},
+  {k:"bk-",   n:"Beziehungskonzept negativ",short:"BK−",   cls:"c-bkn",   stem:"In Beziehungen … / Andere …"},
+  {k:"norm",  n:"Normen",                   short:"Norm",  cls:"c-norm",  stem:"Ich sollte …"},
+  {k:"regel", n:"Regeln",                   short:"Regel", cls:"c-regel", stem:"Er / sie / es / man sollte …"},
+  {k:"sk+",   n:"Selbstkonzept positiv",    short:"SK+",   cls:"c-skp",   stem:"Ich bin … (kompensatorisch oder Ressource)"},
+  {k:"bk+",   n:"Beziehungskonzept positiv",short:"BK+",   cls:"c-bkp",   stem:"In Beziehungen … (Ressource, Korrektur)"}
+];
+const CAT = Object.fromEntries(CATS.map(c=>[c.k,c]));
+
+const STATUS = [
+  {k:"hypothese", n:"Hypothese",     cls:"st-hyp",  d:"aus Interaktion erschlossen, noch nicht geprüft"},
+  {k:"bestaetigt",n:"bestätigt",     cls:"st-best", d:"vom Klienten wiedererkannt oder wiederholt belegt"},
+  {k:"bearbeitung",n:"in Bearbeitung",cls:"st-arb", d:"wird aktuell geklärt oder umstrukturiert"},
+  {k:"veraendert",n:"verändert",     cls:"st-ver",  d:"Alternative etabliert, Schema verliert an Steuerkraft"}
+];
+const ST = Object.fromEntries(STATUS.map(s=>[s.k,s]));
+
+const KONS = [
+  {k:"vermeidung", n:"Vermeidung / Schutz",  d:"Was tut die Person, damit das Schema nicht bestätigt wird?"},
+  {k:"kompensation",n:"Kompensation",        d:"Womit wird das Schema überdeckt oder ausgeglichen?"},
+  {k:"ziel",       n:"Interaktionelles Ziel",d:"Was soll das Gegenüber tun, damit es erträglich bleibt?"},
+  {k:"spiel",      n:"Spiel / Test",         d:"Welches Spiel oder welcher Beziehungstest folgt daraus?"},
+  {k:"alltag",     n:"Auswirkung im Alltag", d:"Welche Folgen zeigen sich in Arbeit, Partnerschaft, Familie?"},
+  {k:"beziehung",  n:"Therapiebeziehung",    d:"Was heißt das für Komplementarität und Beziehungsgestaltung?"}
+];
+const KO = Object.fromEntries(KONS.map(k=>[k.k,k]));
+
+const MOTIVE = [
+  {k:"anerkennung", n:"Anerkennung",   d:"Ich bin wertvoll, so wie ich bin"},
+  {k:"wichtigkeit", n:"Wichtigkeit",   d:"Ich bin für andere bedeutsam"},
+  {k:"verlaesslich",n:"Verlässlichkeit",d:"Ich kann mich auf andere verlassen"},
+  {k:"solidaritaet",n:"Solidarität",   d:"Andere stehen zu mir, auch wenn es schwierig wird"},
+  {k:"autonomie",   n:"Autonomie",     d:"Ich entscheide selbst über mein Leben"},
+  {k:"grenzen",     n:"Grenzen",       d:"Meine Grenzen und mein Territorium werden respektiert"}
+];
+
+/* Bibliothek: Übersicht Nähe- und Distanz-Störungen (Sachse) */
+const LIB = [
+  {k:"narz", n:"Narzisstisch", pol:"Nähe",
+   motive:["Anerkennung","Wichtigkeit","Solidarität"],
+   schemas:[
+     {c:"sk-",  t:"Ich bin nicht gut genug – ich muss mich ständig beweisen"},
+     {c:"sk+",  t:"Ich bin etwas Besonderes, mir steht Sonderbehandlung zu (VIP-Status)"},
+     {c:"regel",t:"Andere sollten die Regeln akzeptieren, die ich setze"},
+     {c:"regel",t:"Andere sollten mein Territorium respektieren"}],
+   spiele:["Blöd-Spiel","Mords-Molly"],
+   ziele:["sei besser als andere","zeige wenig von dir","lass dich nicht dominieren","erwarte nur das Beste","stelle Forderungen"],
+   kompl:"Nicht defizitär behandeln; respektieren, akzeptieren, „füttern“, normalisieren, Compliance schaffen.",
+   bes:"Kritikempfindlichkeit, „abschaltbare“ Empathie."},
+
+  {k:"hist", n:"Histrionisch", pol:"Nähe",
+   motive:["Wichtigkeit","Verlässlichkeit","Solidarität"],
+   schemas:[
+     {c:"sk-",t:"Ich bin nicht wichtig"},
+     {c:"bk-",t:"Beziehungen sind nicht verlässlich"},
+     {c:"bk-",t:"Beziehungen sind nicht solidarisch"}],
+   spiele:["Armes Schwein","Opfer anderer Personen / der Umstände","direkte Kontrolle","Dornröschen"],
+   ziele:["erlange Aufmerksamkeit um jeden Preis","sei die/der Wichtigste","fordere das vom Partner","gib anderen die Verantwortung"],
+   kompl:"Wichtig und ernst nehmen, annehmen; alles vermeiden, was als Desinteresse gedeutet werden kann; therapeutische Regeln beachten.",
+   bes:"Dramatik, Aufschaukeln, Alienation."},
+
+  {k:"selbstunsicher", n:"Selbstunsicher", pol:"Nähe",
+   motive:["Anerkennung","Wichtigkeit"],
+   schemas:[
+     {c:"sk-",t:"Ich bin nicht attraktiv"},
+     {c:"sk-",t:"Ich bin sozial inkompetent"},
+     {c:"sk-",t:"Ich habe anderen nichts zu bieten"},
+     {c:"bk-",t:"Durch soziale Aktivitäten blamiere ich mich"}],
+   spiele:["so gut wie keine"],
+   ziele:["halte dich zurück","falle nicht auf","blamiere dich nicht","fordere erst etwas, wenn du dir der Anerkennung sicher bist"],
+   kompl:"Ernst nehmen, Verständnis signalisieren, respektvoll behandeln.",
+   bes:"Mangelnde soziale Kompetenz, selbsterfüllende Prophezeiungen, hartnäckige Schemata."},
+
+  {k:"dependent", n:"Dependent", pol:"Nähe",
+   motive:["Verlässlichkeit","Solidarität"],
+   schemas:[
+     {c:"bk-",t:"Beziehungen sind nicht verlässlich"},
+     {c:"bk-",t:"Beziehungen sind nicht solidarisch"},
+     {c:"sk-",t:"Ich kann nicht alleine leben"},
+     {c:"bk-",t:"Verlassen zu werden ist eine Katastrophe"}],
+   spiele:["Armes Schwein","Blöd-Spiel"],
+   ziele:["zeige dich unentbehrlich","zeige dich schwach und hilfsbedürftig","gehe Konflikten aus dem Weg","vermeide Streit","stimme möglichst immer zu","kritisiere nur, wenn dir nichts passieren kann"],
+   kompl:"Loyal sein, sich nicht in Spiele verwickeln lassen; „paradoxe Interventionen“.",
+   bes:"Völlige Unterordnung, Entscheidungsschwäche / Lageorientierung, Alienation, konfliktscheu."},
+
+  {k:"passivaggressiv", n:"Passiv-aggressiv", pol:"Distanz",
+   motive:["Grenzen","Autonomie","Anerkennung"],
+   schemas:[
+     {c:"bk-",t:"Andere respektieren meine Grenzen nicht"},
+     {c:"bk-",t:"Andere schränken meine Autonomie ein"},
+     {c:"bk-",t:"Ich erhalte keine Anerkennung"},
+     {c:"regel",t:"Offener Widerstand verschlimmert das Problem – also wehre dich verdeckt"}],
+   spiele:["Armes Schwein","Heroisches armes Schwein","Immer ich","Märtyrer"],
+   ziele:["lass dich auf keinen Fall einschränken oder bevormunden","wehre dich offen nur, wenn es ungefährlich ist","lass dir auch Kleinigkeiten nicht gefallen"],
+   kompl:"Respekt, keinen Druck ausüben, Grenzen nicht verletzen, hohe Transparenz, Kontrolle an den Klienten.",
+   bes:"Passive Verweigerung bei offener Compliance."},
+
+  {k:"schizoid", n:"Schizoid", pol:"Distanz",
+   motive:["Anerkennung","Wichtigkeit","Verlässlichkeit","Solidarität"],
+   schemas:[
+     {c:"bk-",t:"Beziehungen bringen nichts"},
+     {c:"bk-",t:"Ich kann mich nur auf mich selbst verlassen"},
+     {c:"sk-",t:"Ich kann mit sozialen Situationen nicht umgehen"},
+     {c:"norm",t:"Ich sollte unabhängig bleiben („Flucht in die Autonomie“)"}],
+   spiele:["wenig"],
+   ziele:["bleib allein","halte dich von anderen fern","mach dich nicht abhängig","du kommst allein bestens klar"],
+   kompl:"Verstehen, sich in den Bezugsrahmen des Klienten einfühlen, kein Druck, Respekt und Akzeptierung, vorsichtige Angebote.",
+   bes:"Distanz-Strategie durch mangelnde nonverbale Kommunikation, soziale Kompetenz- und Regeldefizite."},
+
+  {k:"paranoid", n:"Paranoid", pol:"Distanz",
+   motive:["Grenzen","Autonomie","Solidarität","Anerkennung"],
+   schemas:[
+     {c:"bk-",t:"Meine Grenzen werden nicht respektiert"},
+     {c:"bk-",t:"Andere wollen mich schädigen oder beeinträchtigen"},
+     {c:"regel",t:"Wenn ich nicht sofort hart reagiere, werde ich untergebuttert"}],
+   spiele:["kaum Spiele"],
+   ziele:["sei auf der Hut","lass niemandem etwas durchgehen","zeige deutlich, wie massiv du dich wehren kannst","zeige keine Schwäche"],
+   kompl:"Respektvoll behandeln, Ressourcen anerkennen, völlige Transparenz, Grenzen respektieren, kein Druck, Kontrolle an den Klienten.",
+   bes:"Hypersensible Reaktionen auf alles, was als Grenzverletzung, Abwertung oder Beeinträchtigung gedeutet werden kann."},
+
+  {k:"zwanghaft", n:"Zwanghaft", pol:"Distanz",
+   motive:["Anerkennung","Wichtigkeit","Solidarität","Autonomie"],
+   schemas:[
+     {c:"sk-",t:"Ich bin nicht ok, ich bin toxisch"},
+     {c:"bk-",t:"In Beziehungen wird man abgewertet"},
+     {c:"norm",t:"Ich sollte Normen folgen, dann bin ich sicher"}],
+   spiele:["Moses-Spiel"],
+   ziele:["folge auf jeden Fall deinen Normen","wenn jemand deine Normen angreift, leiste Widerstand","achte nicht auf deine Wünsche und Gefühle"],
+   kompl:"Akzeptieren und respektieren, kein Druck, keine Grenzverletzungen, Kontrolle an den Klienten, nicht über Normen diskutieren.",
+   bes:"Das Befolgen der Normen ist Schutz, ermöglicht aber zugleich Abwertung; Regel-Setzer, massive Alienation."}
+];
+const LIBK = Object.fromEntries(LIB.map(l=>[l.k,l]));
+
+/* ================= Speicher ================= */
+const KEY="schemaprofil.v1";
+let store={clients:{},pinHash:null};
+let storageOk=true;
+
+const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,7);
+const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const fmtDate=ts=>new Date(ts).toLocaleDateString("de-DE",{day:"2-digit",month:"2-digit",year:"numeric"});
+const fmtTime=ts=>new Date(ts).toLocaleTimeString("de-DE",{hour:"2-digit",minute:"2-digit"});
+const normCode=s=>s.toUpperCase().replace(/[^A-Z0-9ÄÖÜ_-]/g,"").slice(0,14);
+
+function load(){
+  try{
+    const raw=localStorage.getItem(KEY);
+    if(raw) store=Object.assign(store,JSON.parse(raw));
+    else{ seed(); save(); }
+    migrate();
+  }catch(e){ storageOk=false; seed(); migrate(); }
+}
+function save(){
+  try{ localStorage.setItem(KEY,JSON.stringify(store)); storageOk=true; return true; }
+  catch(e){ storageOk=false; toast("Speichern nicht möglich – Browser-Speicher blockiert"); return false; }
+}
+try{ navigator.storage && navigator.storage.persist && navigator.storage.persist(); }catch(e){}
+
+function newClient(extra){
+  return Object.assign({created:Date.now(), note:"", stoerung:"", motive:{},
+    schemas:[], gedanken:[], affekt:[], log:[]}, extra||{});
+}
+/* Ältere Stände nachziehen: Affekte lagen früher als Konsequenz am Schema. */
+function migrate(){
+  Object.values(store.clients).forEach(c=>{
+    if(!Array.isArray(c.gedanken)) c.gedanken=[];
+    if(!Array.isArray(c.affekt)) c.affekt=[];
+    (c.schemas||[]).forEach(s=>{
+      const keep=[];
+      (s.cons||[]).forEach(k=>{
+        if(k.kind==="affekt") c.affekt.push({id:k.id, text:k.text, created:k.created});
+        else keep.push(k);
+      });
+      s.cons=keep;
+    });
+  });
+}
+function seed(){
+  const now=Date.now(), day=864e5;
+  const c=newClient({created:now-96*day, stoerung:"passivaggressiv",
+    note:"Beispielprofil zur Ansicht. Ersetzen Sie es durch eigene Pseudonyme.",
+    motive:{anerkennung:4,wichtigkeit:2,verlaesslich:3,solidaritaet:2,autonomie:5,grenzen:5}});
+  c.schemas=[
+    {id:uid(), cat:"sk-", text:"Ich bin nicht gut genug!", status:"bestaetigt", lead:true,
+     evidenz:"Bricht im Gespräch ab, sobald eigene Leistung Thema wird; entwertet eigene Erfolge.",
+     alt:"Ich genüge, auch wenn ich Fehler mache.",
+     created:now-96*day, updated:now-12*day,
+     history:[{ts:now-96*day, text:"Ich tauge nichts."}],
+     cons:[
+       {id:uid(), kind:"vermeidung", text:"Meldet sich in Teambesprechungen nicht zu Wort", created:now-90*day},
+       {id:uid(), kind:"kompensation", text:"Arbeitet Aufgaben bis zur Erschöpfung nach Feierabend nach", created:now-60*day},
+       {id:uid(), kind:"alltag", text:"Zwei Beförderungen ausgeschlagen", created:now-60*day}
+     ]},
+    {id:uid(), cat:"bk-", text:"In Beziehungen werde ich kontrolliert!", status:"bearbeitung", lead:true,
+     evidenz:"Reagiert auf Terminvorschläge mit Verzögerung; beschreibt Partnerschaft als „Aufsicht“.",
+     alt:"", created:now-96*day, updated:now-5*day, history:[],
+     cons:[
+       {id:uid(), kind:"ziel", text:"Lass dir nichts vorschreiben – halte alle Entscheidungen offen", created:now-80*day},
+       {id:uid(), kind:"spiel", text:"Zusagen im Gespräch, danach passive Verweigerung", created:now-80*day},
+       {id:uid(), kind:"beziehung", text:"Transparenz über jeden Schritt, Kontrolle bei ihm lassen, keine Hausaufgaben vorgeben", created:now-40*day}
+     ]},
+    {id:uid(), cat:"norm", text:"Ich sollte alles alleine schaffen.", status:"bestaetigt", lead:false,
+     evidenz:"", alt:"", created:now-70*day, updated:now-70*day, history:[], cons:[
+       {id:uid(), kind:"vermeidung", text:"Bittet nie um Hilfe, auch nicht bei Überlastung", created:now-70*day}]},
+    {id:uid(), cat:"regel", text:"Andere sollten meine Grenzen von sich aus erkennen.", status:"hypothese", lead:false,
+     evidenz:"", alt:"", created:now-30*day, updated:now-30*day, history:[], cons:[]},
+    {id:uid(), cat:"sk+", text:"Wenn ich mich einlasse, bin ich verlässlich und genau.", status:"bestaetigt", lead:false,
+     evidenz:"Ressource: wird im Beruf als sorgfältig beschrieben.", alt:"",
+     created:now-20*day, updated:now-20*day, history:[], cons:[]}
+  ];
+  c.gedanken=[
+    {id:uid(), text:"„Wieso schaffe ich das nicht?“", created:now-90*day},
+    {id:uid(), text:"„Mein Chef wird mich für eine Pfeife halten …“", created:now-90*day},
+    {id:uid(), text:"„Er wird gar nichts mehr von mir halten.“", created:now-90*day},
+    {id:uid(), text:"„Ich bin ja auch dumm und zu nichts zu gebrauchen.“", created:now-88*day}
+  ];
+  c.affekt=[
+    {id:uid(), text:"Anspannung", created:now-90*day},
+    {id:uid(), text:"Unruhe", created:now-90*day},
+    {id:uid(), text:"Verunsicherung", created:now-90*day},
+    {id:uid(), text:"Kloß im Hals", created:now-90*day},
+    {id:uid(), text:"Druck auf der Brust", created:now-90*day},
+    {id:uid(), text:"Weiche Knie", created:now-88*day},
+    {id:uid(), text:"Unzufriedenheit", created:now-88*day},
+    {id:uid(), text:"Unwohlsein", created:now-88*day},
+    {id:uid(), text:"Unausgeglichenheit", created:now-88*day}
+  ];
+  c.log=[
+    {ts:now-96*day, t:"Profil angelegt"},
+    {ts:now-96*day, t:"Schema ergänzt: „Ich tauge nichts.“ (SK−)"},
+    {ts:now-90*day, t:"Affekt und automatische Gedanken zur Schemaaktivierung festgehalten"},
+    {ts:now-70*day, t:"Norm ergänzt: „Ich sollte alles alleine schaffen.“"},
+    {ts:now-40*day, t:"Therapiebeziehung: Komplementarität festgehalten"},
+    {ts:now-12*day, t:"Schema korrigiert: „Ich tauge nichts.“ → „Ich bin nicht gut genug!“"},
+    {ts:now-5*day,  t:"Status geändert: BK− „In Beziehungen werde ich kontrolliert!“ → in Bearbeitung"}
+  ];
+  store.clients={"DEMO-01":c};
+}
+
+/* ================= Hilfen ================= */
+function logIt(code,t){
+  const c=store.clients[code]; if(!c) return;
+  c.log.push({ts:Date.now(), t});
+  if(c.log.length>500) c.log=c.log.slice(-500);
+}
+async function hash(pin){
+  const txt="schemaprofil:"+pin;
+  try{
+    const buf=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(txt));
+    return [...new Uint8Array(buf)].map(b=>b.toString(16).padStart(2,"0")).join("");
+  }catch(e){ let h=5381; for(const ch of txt) h=(h*33)^ch.charCodeAt(0); return "d"+(h>>>0).toString(16); }
+}
+function toast(t){
+  const el=document.getElementById("toast");
+  el.textContent=t; el.hidden=false;
+  clearTimeout(toast._t); toast._t=setTimeout(()=>el.hidden=true,2600);
+}
+const schemasOf=(c,cat)=>(store.clients[c]?store.clients[c].schemas:[]).filter(s=>!cat||s.cat===cat);
+const findSchema=(c,id)=>(store.clients[c]?store.clients[c].schemas:[]).find(s=>s.id===id);
+const consCount=c=>(store.clients[c]?store.clients[c].schemas:[]).reduce((n,s)=>n+s.cons.length,0);
+
+/* ================= Zustand ================= */
+const app=document.getElementById("app");
+const modal=document.getElementById("modal");
+let view="pin", tab="clients", sub="bild", selected=null, libFilter="alle";
+
+function go(v){ view=v; render(); window.scrollTo(0,0); }
+function render(){
+  if(view==="pin") return renderPin();
+  renderMain();
+}
+
+/* ================= PIN ================= */
+function renderPin(){
+  const first=!store.pinHash;
+  app.innerHTML=`<div class="panel pin-card">
+    ${brandHTML(true)}
+    <h2>${first?"PIN festlegen":"PIN eingeben"}</h2>
+    <p class="muted" style="font-size:.93rem">${first
+      ?"Die Profile liegen ausschließlich in diesem Browser. Die PIN schützt sie vor kurzem Blick über die Schulter – sie ersetzt keine Verschlüsselung."
+      :"Nur für die Behandlerin oder den Behandler."}</p>
+    <form id="pinForm" style="display:flex;flex-direction:column;gap:10px" autocomplete="off">
+      <input id="pin1" class="field" type="password" inputmode="numeric" aria-label="PIN" placeholder="••••">
+      ${first?`<input id="pin2" class="field" type="password" inputmode="numeric" aria-label="PIN wiederholen" placeholder="wiederholen">`:""}
+      <div class="msg" id="pinMsg" role="alert"></div>
+      <button class="btn primary" style="justify-content:center">${first?"Speichern und öffnen":"Öffnen"}</button>
+    </form></div>`;
+  const p1=document.getElementById("pin1"); p1.focus();
+  document.getElementById("pinForm").onsubmit=async e=>{
+    e.preventDefault();
+    const m=document.getElementById("pinMsg");
+    if(first){
+      const p2=document.getElementById("pin2").value;
+      if(!/^\d{4,}$/.test(p1.value)){ m.textContent="Die PIN braucht mindestens 4 Ziffern."; return; }
+      if(p1.value!==p2){ m.textContent="Die beiden Eingaben stimmen nicht überein."; return; }
+      store.pinHash=await hash(p1.value); save(); toast("PIN gespeichert"); go("main");
+    }else{
+      if(await hash(p1.value)===store.pinHash) go("main");
+      else{ m.textContent="PIN falsch. Bitte erneut versuchen."; p1.value=""; p1.focus(); }
+    }
+  };
+}
+
+/* ================= Rahmen ================= */
+function brandHTML(stack){
+  return `<div class="brand" ${stack?'style="font-size:1.05rem"':""}>
+    <svg class="logo" viewBox="0 0 512 512" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="256" cy="256" r="247"/>
+      <path d="M101 153V262q0 14 14 14H205q14 0 14 14V436"/>
+      <path d="M411 153V262q0 14-14 14H307q-14 0-14 14V436"/>
+      <path d="M256 168V436"/></svg>
+    Gebauer<span class="app">Therapie</span></div>`;
+}
+
+function renderMain(){
+  app.innerHTML=`<div class="wrap">
+    <div class="topbar">
+      ${brandHTML()}
+      <div class="row">
+        <div class="tabs" role="tablist">
+          <button role="tab" data-act="tab" data-v="clients" aria-selected="${tab==="clients"}">Klienten</button>
+          <button role="tab" data-act="tab" data-v="lib" aria-selected="${tab==="lib"}">Bibliothek</button>
+          <button role="tab" data-act="tab" data-v="daten" aria-selected="${tab==="daten"}">Daten</button>
+        </div>
+        <button class="btn" data-act="lock">Sperren</button>
+      </div>
+    </div>
+    ${storageOk?"":`<div class="note">Dieser Browser erlaubt keinen dauerhaften Speicher. Änderungen gehen beim Schließen verloren – bitte zuerst exportieren.</div>`}
+    <div id="body"></div>
+  </div>`;
+  const body=document.getElementById("body");
+  if(tab==="clients") body.innerHTML=clientsHTML();
+  else if(tab==="lib") body.innerHTML=libHTML();
+  else body.innerHTML=datenHTML();
+  if(tab==="clients" && selected && sub==="bild") drawCloud();
+}
+
+/* ================= Klienten ================= */
+function clientsHTML(){
+  const codes=Object.keys(store.clients).sort();
+  if(!selected || !store.clients[selected]) selected=codes[0]||null;
+  const items=codes.map(c=>{
+    const cl=store.clients[c];
+    const n=cl.schemas.length, k=consCount(c);
+    const lib=cl.stoerung?LIBK[cl.stoerung]:null;
+    return `<li><button data-act="sel" data-v="${esc(c)}" aria-current="${c===selected}">
+      <span class="code">${esc(c)}</span>
+      <span class="sub"><span>${n} Schemata</span><span>${k} Konsequenzen</span>${lib?`<span>${esc(lib.n)}</span>`:""}</span>
+    </button></li>`;
+  }).join("");
+  return `<div class="layout">
+    <aside class="panel side">
+      <div class="side-head">
+        <span class="eyebrow">Profile (${codes.length})</span>
+        <form class="add-row" data-act="addclient" autocomplete="off">
+          <input class="field" id="newCode" placeholder="Pseudonym" aria-label="Neues Pseudonym" maxlength="14" spellcheck="false">
+          <button class="btn primary">Anlegen</button>
+        </form>
+        <p class="muted" style="font-size:.8rem">Nur Pseudonyme, keine Klarnamen, keine Geburtsdaten.</p>
+      </div>
+      ${codes.length?`<ul class="clist">${items}</ul>`:`<div class="empty">Noch kein Profil. Legen Sie oben ein Pseudonym an.</div>`}
+    </aside>
+    <section class="panel">${selected?detailHTML():`<div class="empty">Wählen Sie links ein Profil aus oder legen Sie eines an.</div>`}</section>
+  </div>`;
+}
+
+function detailHTML(){
+  const c=store.clients[selected];
+  const subs=[["bild","Schema-Bild"],["schemata","Schemata"],["kons","Konsequenzen"],["motive","Motive & Muster"],["verlauf","Verlauf"]];
+  let inner="";
+  if(sub==="bild") inner=bildHTML();
+  else if(sub==="schemata") inner=schemataHTML();
+  else if(sub==="kons") inner=konsHTML();
+  else if(sub==="motive") inner=motiveHTML();
+  else inner=verlaufHTML();
+  return `<div class="detail">
+    <div class="detail-head">
+      <div><span class="eyebrow">Profil · seit ${fmtDate(c.created)}</span><h2>${esc(selected)}</h2></div>
+      <div class="row">
+        <button class="btn small" data-act="print">Drucken</button>
+        <button class="btn small danger" data-act="delclient">Profil löschen</button>
+      </div>
+    </div>
+    ${c.note?`<div class="note">${esc(c.note)}</div>`:""}
+    <div class="subtabs" role="tablist">
+      ${subs.map(([k,n])=>`<button role="tab" data-act="sub" data-v="${k}" aria-selected="${sub===k}">${n}</button>`).join("")}
+    </div>
+    ${inner}
+  </div>`;
+}
+
+/* ---------- Schema-Bild ---------- */
+function leadOf(cat){
+  const all=schemasOf(selected,cat);
+  const lead=all.filter(s=>s.lead);
+  return {shown:(lead.length?lead:all.slice(0,1)), rest:all.length-(lead.length?lead.length:Math.min(1,all.length))};
+}
+function bubbleHTML(cat){
+  const C=CAT[cat], {shown,rest}=leadOf(cat);
+  const body=shown.length
+    ? shown.map(s=>`<span>${esc(s.text)}</span>`).join("")
+    : `<em>noch kein ${C.short}-Schema erfasst</em>`;
+  return `<div class="thought ${C.cls}">
+    <span class="lab">${C.short}</span>
+    <button class="box" data-act="pickLead" data-v="${cat}" title="Welches ${C.short}-Schema soll im Bild stehen?">
+      ${body}
+      ${rest>0?`<span class="more">+ ${rest} weitere${rest===1?"s":""} ${C.short}-Schema${rest===1?"":"ta"}</span>`:""}
+    </button>
+  </div>`;
+}
+function figureSVG(){
+  return `<svg viewBox="0 0 112 196" aria-label="Schemafigur" fill="none" stroke="currentColor"
+      stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="56" cy="32" rx="23.5" ry="21.5"/>
+    <path d="M56 53.5 C55.4 58 55.6 60.5 56 63"/>
+    <path d="M56 63 C58 84 57 104 56.5 126"/>
+    <path d="M56 74 C47 80 38 88 29.5 99 C28 101 26.5 102 24 102.5"/>
+    <path d="M56 74 C65 79 74 86 82.5 96 C84 98 85.5 99 88 99.5"/>
+    <path d="M56.5 126 C51 142 45 158 39 176 C38 178.5 36.5 180 34 181"/>
+    <path d="M56.5 126 C62 142 68 157 74 175 C75 177.5 76.5 179 79 180"/>
+  </svg>`;
+}
+function arrowSVG(kind){
+  const a='fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"';
+  return kind==="in"
+    ? `<svg viewBox="0 0 76 96" ${a}><path d="M8 5 C24 27 42 54 59 81"/><path d="M42 76 L62 87 L55 65"/></svg>`
+    : `<svg viewBox="0 0 88 22" ${a}><path d="M84 11 C60 12 34 11 8 11"/><path d="M25 3 L6 11 L25 19"/></svg>`;
+}
+function gaColumn(kind,label,items){
+  const cls=kind==="gedanken"?"ged":"aff";
+  const ph=kind==="gedanken"?"„Wieso schaffe ich das nicht?“":"Gefühl oder Körperempfindung";
+  return `<div class="ga ${cls}">
+    <h4>${label}</h4>
+    ${items.length?`<ul>${items.map(i=>`<li><span>${esc(i.text)}</span>
+      <button class="btn small ghost danger x" data-act="delga" data-v="${kind}|${i.id}" aria-label="Eintrag löschen">×</button></li>`).join("")}</ul>`
+      :`<p class="muted" style="font-size:.9rem">noch nichts erfasst</p>`}
+    <form data-act="addga" data-v="${kind}" autocomplete="off">
+      <input class="field" placeholder="${esc(ph)}" aria-label="${esc(label)} ergänzen" maxlength="160">
+      <button class="btn small">+</button>
+    </form>
+  </div>`;
+}
+function bildHTML(){
+  const c=store.clients[selected];
+  const norms=schemasOf(selected,"norm"), regeln=schemasOf(selected,"regel");
+  const selfCats=["sk-"].concat(schemasOf(selected,"sk+").length?["sk+"]:[]);
+  const relCats=["bk-"].concat(schemasOf(selected,"bk+").length?["bk+"]:[]);
+  return `<div class="bild">
+    <div>
+      <div class="scene">
+        <div class="figure">${figureSVG()}</div>
+        <div class="bubbles">
+          <div class="brow up">
+            <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
+            <div class="cloud" data-bub="self" data-seed="0">
+              <svg preserveAspectRatio="none" aria-hidden="true"><path class="fill" d=""/></svg>
+              <div class="cloud-inner">
+                <span class="cloud-cap">Selbstkonzept</span>
+                ${selfCats.map(bubbleHTML).join("")}
+              </div>
+            </div>
+          </div>
+          <div class="brow down">
+            <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
+            <div class="cloud" data-bub="rel" data-seed="2.4">
+              <svg preserveAspectRatio="none" aria-hidden="true"><path class="fill" d=""/></svg>
+              <div class="cloud-inner">
+                <span class="cloud-cap">Beziehungskonzept</span>
+                ${relCats.map(bubbleHTML).join("")}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="gaflow">
+        <div class="arrow-in">${arrowSVG("in")}</div>
+        ${gaColumn("gedanken","Gedanken",c.gedanken)}
+        <div class="arrow-left">${arrowSVG("left")}</div>
+        ${gaColumn("affekt","Affekt",c.affekt)}
+      </div>
+      <div class="bild-foot">
+        <span class="muted" style="font-size:.88rem;flex-basis:100%">Ein Klick auf einen Kasten wählt, welches Schema in der Blase steht.</span>
+        <button class="btn small" data-act="new" data-v="sk-">SK− ergänzen</button>
+        <button class="btn small" data-act="new" data-v="bk-">BK− ergänzen</button>
+        <button class="btn small ghost" data-act="new" data-v="sk+">SK+</button>
+        <button class="btn small ghost" data-act="new" data-v="bk+">BK+</button>
+      </div>
+    </div>
+    <div class="side-boxes">
+      <div class="sbox">
+        <span class="cap c-norm">NORMEN</span>
+        <p class="stem">Ich sollte …</p>
+        ${norms.length?`<ul>${norms.map(s=>`<li>${esc(s.text)}</li>`).join("")}</ul>`
+          :`<p class="muted" style="font-size:.9rem">noch nichts erfasst</p>`}
+        <button class="btn small ghost" style="margin-top:8px;padding-left:0" data-act="new" data-v="norm">+ Norm</button>
+      </div>
+      <div class="sbox">
+        <span class="cap c-regel">REGELN</span>
+        <p class="stem">Er / sie / es / man sollte …</p>
+        ${regeln.length?`<ul>${regeln.map(s=>`<li>${esc(s.text)}</li>`).join("")}</ul>`
+          :`<p class="muted" style="font-size:.9rem">noch nichts erfasst</p>`}
+        <button class="btn small ghost" style="margin-top:8px;padding-left:0" data-act="new" data-v="regel">+ Regel</button>
+      </div>
+    </div>
+  </div>`;
+}
+function cloudPath(w,h,seed){
+  const N=20, base=Math.max(13,Math.min(w,h)*0.085);
+  const cx=w/2, cy=h/2;
+  const baseRx=Math.max(24,w/2-base), baseRy=Math.max(20,h/2-base);
+  const pts=[];
+  for(let i=0;i<N;i++){
+    const a=(i/N)*Math.PI*2-Math.PI/2;
+    const j=1+0.045*Math.sin(i*2.3+seed)+0.03*Math.sin(i*1.13+seed*1.9);
+    pts.push([cx+baseRx*j*Math.cos(a), cy+baseRy*j*Math.sin(a)]);
+  }
+  let d=`M ${pts[0][0].toFixed(1)} ${pts[0][1].toFixed(1)}`;
+  for(let i=1;i<=N;i++){
+    const p=pts[i%N], q=pts[i-1];
+    const f=0.60+0.09*Math.sin(i*1.7+seed);
+    const r=(Math.hypot(p[0]-q[0],p[1]-q[1])*f).toFixed(1);
+    d+=` A ${r} ${r} 0 0 1 ${p[0].toFixed(1)} ${p[1].toFixed(1)}`;
+  }
+  return d+" Z";
+}
+function drawCloud(){
+  const els=app.querySelectorAll(".cloud");
+  if(!els.length) return;
+  els.forEach(el=>{
+    const svg=el.querySelector("svg");
+    const w=Math.round(el.clientWidth), h=Math.round(el.clientHeight);
+    if(!svg||!w||!h) return;
+    svg.setAttribute("viewBox",`0 0 ${w} ${h}`);
+    svg.querySelector("path").setAttribute("d",cloudPath(w,h,parseFloat(el.dataset.seed)||0));
+  });
+  if(ro){ try{ ro.disconnect(); els.forEach(el=>ro.observe(el)); }catch(e){} }
+}
+let ro=null;
+try{
+  ro=new ResizeObserver(()=>{ if(tab==="clients"&&sub==="bild") drawCloud(); });
+}catch(e){}
+window.addEventListener("resize",()=>{ if(tab==="clients"&&sub==="bild") drawCloud(); });
+
+/* ---------- Schemata ---------- */
+function schemaCard(s){
+  const C=CAT[s.cat], st=ST[s.status]||ST.hypothese;
+  return `<div class="card ${s.lead?"lead":""} ${C.cls}">
+    <div class="txt" style="color:var(--ink)">${esc(s.text)}</div>
+    <div class="meta">
+      <span class="chip ${st.cls}">${st.n}</span>
+      ${s.lead?`<span class="chip neutral">im Bild</span>`:""}
+      <span>angelegt ${fmtDate(s.created)}</span>
+      ${s.updated>s.created?`<span>· zuletzt geändert ${fmtDate(s.updated)}</span>`:""}
+      ${s.cons.length?`<span>· ${s.cons.length} Konsequenz${s.cons.length===1?"":"en"}</span>`:""}
+    </div>
+    ${s.evidenz?`<p class="ev">${esc(s.evidenz)}</p>`:""}
+    ${s.alt?`<p class="alt"><strong>Alternative:</strong> ${esc(s.alt)}</p>`:""}
+    ${s.history.length?`<details class="hist"><summary>${s.history.length} frühere Fassung${s.history.length===1?"":"en"}</summary>
+      <ol>${s.history.slice().reverse().map(h=>`<li>${fmtDate(h.ts)}: „${esc(h.text)}“</li>`).join("")}</ol></details>`:""}
+    <div class="acts">
+      <button class="btn small" data-act="edit" data-v="${s.id}">Bearbeiten</button>
+      <button class="btn small" data-act="addcons" data-v="${s.id}">Konsequenz ableiten</button>
+      ${["sk-","bk-","sk+","bk+"].includes(s.cat)?`<button class="btn small" data-act="togglelead" data-v="${s.id}">${s.lead?"Aus dem Bild nehmen":"Ins Bild"}</button>`:""}
+      <button class="btn small ghost danger" data-act="delschema" data-v="${s.id}">Löschen</button>
+    </div>
+  </div>`;
+}
+function schemataHTML(){
+  const c=store.clients[selected];
+  return `<div class="catgrid">
+    <div class="spread">
+      <p class="muted" style="font-size:.93rem;max-width:62ch">Schemata werden im Verlauf ergänzt und korrigiert. Jede Textänderung wird als frühere Fassung mitgeführt, damit die Entwicklung sichtbar bleibt.</p>
+      <button class="btn primary small" data-act="new" data-v="sk-">Schema anlegen</button>
+    </div>
+    ${CATS.map(C=>{
+      const list=c.schemas.filter(s=>s.cat===C.k);
+      return `<section class="catsec ${C.cls}">
+        <header>
+          <h3><span class="cat-chip">${C.short}</span> ${C.n}</h3>
+          <span class="stem">${esc(C.stem)}</span>
+        </header>
+        ${list.length?list.map(schemaCard).join("")
+          :`<p class="muted" style="font-size:.93rem">Noch nichts erfasst. <button class="btn small ghost" data-act="new" data-v="${C.k}">${C.short} ergänzen</button></p>`}
+      </section>`;
+    }).join("")}
+  </div>`;
+}
+
+/* ---------- Konsequenzen ---------- */
+function konsHTML(){
+  const c=store.clients[selected];
+  const withCons=c.schemas.filter(s=>s.cons.length);
+  const counts=KONS.map(k=>({k, n:c.schemas.reduce((a,s)=>a+s.cons.filter(x=>x.kind===k.k).length,0)}));
+  return `<div style="display:flex;flex-direction:column;gap:18px">
+    <p class="muted" style="font-size:.93rem;max-width:66ch">Konsequenzen hängen immer an einem Schema: Was folgt aus diesem Satz für Verhalten, Ziel im Kontakt – und für die Gestaltung der Therapiebeziehung? Affekt und automatische Gedanken stehen im Schema-Bild.</p>
+    <div class="ratings">${counts.map(x=>`<div><span>${esc(x.k.n)}</span><b>${x.n}</b></div>`).join("")}</div>
+    ${c.schemas.length?"":`<p class="muted">Legen Sie zuerst ein Schema an.</p>`}
+    ${c.schemas.map(s=>{
+      const C=CAT[s.cat];
+      return `<section class="catsec ${C.cls}">
+        <header>
+          <h3><span class="cat-chip">${C.short}</span> <span style="font-weight:400">${esc(s.text)}</span></h3>
+          <button class="btn small" data-act="addcons" data-v="${s.id}">+ Konsequenz</button>
+        </header>
+        ${s.cons.length?`<div class="cons-list">${s.cons.map(k=>`
+          <div class="cons"><span class="k">${esc((KO[k.kind]||{n:k.kind}).n)}</span>
+            <span>${esc(k.text)}</span>
+            <button class="btn small ghost danger del" data-act="delcons" data-v="${s.id}|${k.id}" aria-label="Konsequenz löschen">×</button></div>`).join("")}</div>`
+          :`<p class="muted" style="font-size:.92rem">Noch nichts abgeleitet.</p>`}
+      </section>`;
+    }).join("")}
+    ${withCons.length?"":""}
+  </div>`;
+}
+
+/* ---------- Motive & Muster ---------- */
+function motiveHTML(){
+  const c=store.clients[selected];
+  const lib=c.stoerung?LIBK[c.stoerung]:null;
+  return `<div style="display:flex;flex-direction:column;gap:20px">
+    <section style="display:flex;flex-direction:column;gap:10px">
+      <div class="spread"><h3 style="font-size:1.05rem">Zentrale Beziehungsmotive</h3>
+        <span class="muted" style="font-size:.85rem">0 = unauffällig · 5 = stark ausgeprägt</span></div>
+      <div class="motive">
+        ${MOTIVE.map(m=>{
+          const v=c.motive[m.k];
+          return `<div class="mot">
+            <span class="nm">${esc(m.n)}</span><span class="ds">${esc(m.d)}</span>
+            <div class="seg" role="group" aria-label="${esc(m.n)}">
+              ${[0,1,2,3,4,5].map(i=>`<button data-act="mot" data-v="${m.k}|${i}" aria-pressed="${v===i}">${i}</button>`).join("")}
+            </div></div>`;
+        }).join("")}
+      </div>
+    </section>
+    <section style="display:flex;flex-direction:column;gap:10px">
+      <h3 style="font-size:1.05rem">Leitendes Muster</h3>
+      <p class="muted" style="font-size:.92rem;max-width:64ch">Eine Arbeitshypothese, keine Diagnose. Sie blendet die passenden Vorschläge aus der Bibliothek ein.</p>
+      <div class="picker">
+        <button class="pick" data-act="stoerung" data-v="" aria-pressed="${!c.stoerung}">keines</button>
+        ${LIB.map(l=>`<button class="pick" data-act="stoerung" data-v="${l.k}" aria-pressed="${c.stoerung===l.k}">${esc(l.n)}</button>`).join("")}
+      </div>
+      ${lib?libCard(lib):""}
+    </section>
+    <section style="display:flex;flex-direction:column;gap:8px">
+      <h3 style="font-size:1.05rem">Notiz zum Profil</h3>
+      <textarea class="field" id="cnote" placeholder="Kurznotiz, die oben im Profil erscheint">${esc(c.note)}</textarea>
+      <div><button class="btn small" data-act="savenote">Notiz speichern</button></div>
+    </section>
+  </div>`;
+}
+
+/* ---------- Verlauf ---------- */
+function verlaufHTML(){
+  const c=store.clients[selected];
+  const days={};
+  c.log.slice().reverse().forEach(e=>{ (days[fmtDate(e.ts)]=days[fmtDate(e.ts)]||[]).push(e); });
+  const keys=Object.keys(days);
+  return `<div style="display:flex;flex-direction:column;gap:12px">
+    <p class="muted" style="font-size:.93rem;max-width:64ch">Jede Ergänzung, Korrektur und Statusänderung wird hier mitgeschrieben – als Beleg für die Entwicklung des Fallverständnisses.</p>
+    ${keys.length?`<div class="log">${keys.map(d=>`
+      <div class="logday"><span class="d">${d}</span>
+        <ul>${days[d].map(e=>`<li><span class="d num" style="font-size:.8rem">${fmtTime(e.ts)}</span><span>${esc(e.t)}</span></li>`).join("")}</ul>
+      </div>`).join("")}</div>`:`<p class="muted">Noch keine Einträge.</p>`}
+  </div>`;
+}
+
+/* ================= Bibliothek ================= */
+function libCard(l){
+  return `<div class="libcard">
+    <div class="spread"><h3>${esc(l.n)}</h3><span class="chip neutral">${esc(l.pol)}-Störung</span></div>
+    <div class="grp"><span class="eyebrow">Beziehungsmotive</span>
+      <p style="font-size:.93rem">${l.motive.map(esc).join(" · ")}</p></div>
+    <div class="grp"><span class="eyebrow">Typische Schemata</span>
+      <ul>${l.schemas.map((s,i)=>`<li>
+        <span class="cat-chip ${CAT[s.c].cls}">${CAT[s.c].short}</span>
+        <span class="t">${esc(s.t)}</span>
+        ${selected?`<button class="btn small ghost" data-act="libadd" data-v="${l.k}|${i}" title="In das Profil übernehmen">+</button>`:""}
+      </li>`).join("")}</ul></div>
+    <div class="grp"><span class="eyebrow">Interaktionelle Ziele auf der Spielebene</span>
+      <ul>${l.ziele.map(z=>`<li><span class="t">${esc(z)}</span></li>`).join("")}</ul></div>
+    <div class="grp"><span class="eyebrow">Spiele</span>
+      <p style="font-size:.93rem">${l.spiele.map(esc).join(" · ")}</p></div>
+    <div class="grp"><span class="eyebrow">Komplementarität</span>
+      <p style="font-size:.93rem">${esc(l.kompl)}</p></div>
+    <div class="grp"><span class="eyebrow">Besonderheiten</span>
+      <p style="font-size:.93rem">${esc(l.bes)}</p></div>
+  </div>`;
+}
+function libHTML(){
+  const list=LIB.filter(l=>libFilter==="alle"||l.pol===libFilter);
+  return `<section class="panel lib">
+    <div class="spread">
+      <div><h2 style="font-size:1.25rem">Bibliothek</h2>
+        <p class="muted" style="font-size:.92rem;max-width:64ch">Übersicht der Nähe- und Distanz-Störungen: Motive, typische Schemata, Spiele und Komplementarität. Das Plus übernimmt ein Schema als Hypothese in das ausgewählte Profil${selected?` (${esc(selected)})`:" – wählen Sie dafür zuerst ein Profil"}.</p></div>
+      <div class="picker">
+        ${["alle","Nähe","Distanz"].map(f=>`<button class="pick" data-act="libfilter" data-v="${f}" aria-pressed="${libFilter===f}">${f==="alle"?"alle":f+"-Störungen"}</button>`).join("")}
+      </div>
+    </div>
+    <div class="libgrid">${list.map(l=>libCard(l)).join("")}</div>
+  </section>`;
+}
+
+/* ================= Daten ================= */
+function datenHTML(){
+  const n=Object.keys(store.clients).length;
+  const s=Object.keys(store.clients).reduce((a,c)=>a+store.clients[c].schemas.length,0);
+  return `<section class="panel settings">
+    <section>
+      <h3>Wo die Daten liegen</h3>
+      <p>Alle Profile liegen ausschließlich im Speicher dieses Browsers auf diesem Gerät. Nichts wird übertragen, nichts liegt auf einem Server. Ein anderer Browser oder ein anderes Gerät zeigt eine leere App.</p>
+      <p><strong>Zurzeit gespeichert:</strong> ${n} Profil${n===1?"":"e"}, ${s} Schemata, ${Object.keys(store.clients).reduce((a,c)=>a+consCount(c),0)} Konsequenzen.</p>
+    </section>
+    <section>
+      <h3>Sicherung</h3>
+      <p>Der Export legt alle Profile als JSON-Datei ab – als Sicherung und für den Umzug auf ein anderes Gerät.</p>
+      <div class="row">
+        <button class="btn primary small" data-act="export">Exportieren</button>
+        <button class="btn small" data-act="importbtn">Importieren</button>
+      </div>
+      <input type="file" id="importFile" accept="application/json,.json" hidden>
+    </section>
+    <section>
+      <h3>PIN</h3>
+      <p>Die PIN sperrt die Ansicht auf diesem Gerät. Sie verschlüsselt die Daten nicht.</p>
+      <div class="row"><button class="btn small" data-act="resetpin">PIN neu setzen</button></div>
+    </section>
+    <section>
+      <h3>Alles löschen</h3>
+      <p>Entfernt sämtliche Profile und die PIN aus diesem Browser. Nicht rückgängig zu machen.</p>
+      <div class="row"><button class="btn small danger" data-act="wipe">Alle Daten löschen</button></div>
+    </section>
+  </section>`;
+}
+
+/* ================= Modal ================= */
+function closeModal(){ modal.innerHTML=""; }
+function sheet(html){
+  modal.innerHTML=`<div class="scrim"><div class="sheet" role="dialog" aria-modal="true">${html}</div></div>`;
+  const f=modal.querySelector("input,textarea,select"); if(f) f.focus();
+}
+
+function schemaEditor(id,cat){
+  const s=id?findSchema(selected,id):null;
+  const c=s?s.cat:(cat||"sk-");
+  sheet(`<h3>${s?"Schema bearbeiten":"Schema anlegen"}</h3>
+    <div class="fieldset"><label for="f_cat">Ebene</label>
+      <select class="field" id="f_cat">${CATS.map(x=>`<option value="${x.k}" ${x.k===c?"selected":""}>${x.short} – ${x.n}</option>`).join("")}</select>
+      <span class="help" id="f_stem">${esc(CAT[c].stem)}</span></div>
+    <div class="fieldset"><label for="f_text">Schemasatz</label>
+      <textarea class="field" id="f_text" style="min-height:76px" placeholder="In der Sprache des Klienten formulieren">${s?esc(s.text):""}</textarea>
+      ${s?`<span class="help">Wird der Satz geändert, bleibt die bisherige Fassung als Verlauf erhalten.</span>`:""}</div>
+    <div class="fieldset"><label for="f_status">Status</label>
+      <select class="field" id="f_status">${STATUS.map(x=>`<option value="${x.k}" ${s&&s.status===x.k?"selected":""}>${x.n} – ${x.d}</option>`).join("")}</select></div>
+    <div class="fieldset"><label for="f_ev">Woran festgemacht</label>
+      <textarea class="field" id="f_ev" placeholder="Beobachtung, Aussage, Szene aus der Stunde">${s?esc(s.evidenz):""}</textarea></div>
+    <div class="fieldset"><label for="f_alt">Alternative / korrigierte Fassung</label>
+      <textarea class="field" id="f_alt" style="min-height:64px" placeholder="Der Satz, der an die Stelle treten soll">${s?esc(s.alt):""}</textarea></div>
+    <div class="spread">
+      <button class="btn ghost" data-act="close">Abbrechen</button>
+      <button class="btn primary" data-act="saveschema" data-v="${s?s.id:""}">Speichern</button>
+    </div>`);
+  const sel=modal.querySelector("#f_cat");
+  sel.onchange=()=>{ modal.querySelector("#f_stem").textContent=CAT[sel.value].stem; };
+}
+
+function consEditor(sid){
+  const s=findSchema(selected,sid); if(!s) return;
+  const C=CAT[s.cat];
+  sheet(`<h3>Konsequenz ableiten</h3>
+    <p class="muted" style="font-size:.93rem"><span class="cat-chip ${C.cls}">${C.short}</span> ${esc(s.text)}</p>
+    <div class="fieldset"><label for="k_kind">Art der Konsequenz</label>
+      <select class="field" id="k_kind">${KONS.map(k=>`<option value="${k.k}">${k.n}</option>`).join("")}</select>
+      <span class="help" id="k_help">${esc(KONS[0].d)}</span></div>
+    <div class="fieldset"><label for="k_text">Konsequenz</label>
+      <textarea class="field" id="k_text" placeholder="Konkret und beobachtbar formulieren"></textarea></div>
+    <div class="spread">
+      <button class="btn ghost" data-act="close">Abbrechen</button>
+      <button class="btn primary" data-act="savecons" data-v="${sid}">Hinzufügen</button>
+    </div>`);
+  const sel=modal.querySelector("#k_kind");
+  sel.onchange=()=>{ modal.querySelector("#k_help").textContent=(KO[sel.value]||{d:""}).d; };
+}
+
+function leadPicker(cat){
+  const C=CAT[cat], list=schemasOf(selected,cat);
+  if(!list.length){ schemaEditor(null,cat); return; }
+  sheet(`<h3>${C.short} im Bild</h3>
+    <p class="muted" style="font-size:.93rem">Welche Sätze sollen in der Gedankenblase stehen?</p>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      ${list.map(s=>`<label class="card" style="flex-direction:row;align-items:flex-start;gap:10px;cursor:pointer">
+        <input type="checkbox" class="leadbox" value="${s.id}" ${s.lead?"checked":""} style="width:20px;height:20px;margin-top:3px;accent-color:var(--accent)">
+        <span><span style="font-size:1rem">${esc(s.text)}</span><br><span class="chip ${(ST[s.status]||ST.hypothese).cls}" style="margin-top:4px">${(ST[s.status]||ST.hypothese).n}</span></span>
+      </label>`).join("")}
+    </div>
+    <div class="spread">
+      <button class="btn ghost" data-act="new" data-v="${cat}">Neues ${C.short}-Schema</button>
+      <button class="btn primary" data-act="savelead" data-v="${cat}">Übernehmen</button>
+    </div>`);
+}
+
+function confirmSheet(title,text,act,v){
+  sheet(`<h3>${esc(title)}</h3><p class="muted">${esc(text)}</p>
+    <div class="spread"><button class="btn ghost" data-act="close">Abbrechen</button>
+    <button class="btn danger" data-act="${act}" data-v="${esc(v||"")}">Löschen</button></div>`);
+}
+
+/* ================= Aktionen ================= */
+function handle(a,v,el){
+  const c=selected?store.clients[selected]:null;
+  switch(a){
+    case "tab": tab=v; renderMain(); break;
+    case "sub": sub=v; renderMain(); break;
+    case "sel": selected=v; sub="bild"; renderMain(); break;
+    case "lock": view="pin"; closeModal(); render(); break;
+    case "print": window.print(); break;
+    case "libfilter": libFilter=v; renderMain(); break;
+
+    case "new": closeModal(); schemaEditor(null,v); break;
+    case "edit": schemaEditor(v,null); break;
+    case "addcons": closeModal(); consEditor(v); break;
+    case "pickLead": leadPicker(v); break;
+    case "close": closeModal(); break;
+
+    case "saveschema": {
+      const cat=modal.querySelector("#f_cat").value;
+      const text=modal.querySelector("#f_text").value.trim();
+      const status=modal.querySelector("#f_status").value;
+      const ev=modal.querySelector("#f_ev").value.trim();
+      const alt=modal.querySelector("#f_alt").value.trim();
+      if(!text){ toast("Bitte einen Schemasatz eingeben"); return; }
+      if(v){
+        const s=findSchema(selected,v);
+        if(s.text!==text){ s.history.push({ts:s.updated||s.created, text:s.text});
+          logIt(selected,`Schema korrigiert: „${s.text}“ → „${text}“`); }
+        if(s.status!==status) logIt(selected,`Status geändert: ${CAT[cat].short} „${text}“ → ${ST[status].n}`);
+        Object.assign(s,{cat,text,status,evidenz:ev,alt,updated:Date.now()});
+      }else{
+        c.schemas.push({id:uid(),cat,text,status,lead:["sk-","bk-","sk+","bk+"].includes(cat)&&!schemasOf(selected,cat).some(s=>s.lead),
+          evidenz:ev,alt,created:Date.now(),updated:Date.now(),history:[],cons:[]});
+        logIt(selected,`Schema ergänzt: „${text}“ (${CAT[cat].short})`);
+      }
+      save(); closeModal(); renderMain(); toast("Gespeichert"); break;
+    }
+    case "savecons": {
+      const s=findSchema(selected,v);
+      const kind=modal.querySelector("#k_kind").value;
+      const text=modal.querySelector("#k_text").value.trim();
+      if(!text){ toast("Bitte eine Konsequenz eingeben"); return; }
+      s.cons.push({id:uid(),kind,text,created:Date.now()});
+      logIt(selected,`${KO[kind].n} abgeleitet zu „${s.text}“`);
+      save(); closeModal(); renderMain(); toast("Konsequenz hinzugefügt"); break;
+    }
+    case "savelead": {
+      const on=new Set([...modal.querySelectorAll(".leadbox")].filter(x=>x.checked).map(x=>x.value));
+      schemasOf(selected,v).forEach(s=>s.lead=on.has(s.id));
+      save(); closeModal(); renderMain(); break;
+    }
+    case "togglelead": {
+      const s=findSchema(selected,v); s.lead=!s.lead; save(); renderMain(); break;
+    }
+    case "delschema": {
+      const s=findSchema(selected,v);
+      confirmSheet("Schema löschen","„"+s.text+"“ wird mit allen abgeleiteten Konsequenzen entfernt.","delschemaOk",v);
+      break;
+    }
+    case "delschemaOk": {
+      const s=findSchema(selected,v);
+      c.schemas=c.schemas.filter(x=>x.id!==v);
+      logIt(selected,`Schema gelöscht: „${s.text}“`);
+      save(); closeModal(); renderMain(); break;
+    }
+    case "delga": {
+      const [kind,id]=v.split("|");
+      c[kind]=c[kind].filter(x=>x.id!==id);
+      save(); renderMain(); break;
+    }
+    case "delcons": {
+      const [sid,kid]=v.split("|");
+      const s=findSchema(selected,sid);
+      s.cons=s.cons.filter(k=>k.id!==kid);
+      save(); renderMain(); break;
+    }
+    case "mot": {
+      const [k,i]=v.split("|");
+      c.motive[k]=(c.motive[k]===+i)?undefined:+i;
+      logIt(selected,`Motiv ${MOTIVE.find(m=>m.k===k).n}: ${c.motive[k]===undefined?"zurückgesetzt":c.motive[k]}`);
+      save(); renderMain(); break;
+    }
+    case "stoerung": {
+      c.stoerung=v;
+      logIt(selected,`Leitendes Muster: ${v?LIBK[v].n:"keines"}`);
+      save(); renderMain(); break;
+    }
+    case "savenote": {
+      c.note=document.getElementById("cnote").value.trim();
+      save(); renderMain(); toast("Notiz gespeichert"); break;
+    }
+    case "libadd": {
+      if(!selected){ toast("Bitte zuerst links ein Profil wählen"); break; }
+      const [lk,i]=v.split("|");
+      const item=LIBK[lk].schemas[+i];
+      store.clients[selected].schemas.push({id:uid(),cat:item.c,text:item.t,status:"hypothese",
+        lead:false,evidenz:"aus der Bibliothek übernommen ("+LIBK[lk].n+")",alt:"",
+        created:Date.now(),updated:Date.now(),history:[],cons:[]});
+      logIt(selected,`Schema aus Bibliothek übernommen: „${item.t}“ (${CAT[item.c].short})`);
+      save(); renderMain(); toast("In "+selected+" übernommen"); break;
+    }
+    case "delclient":
+      confirmSheet("Profil löschen","Alle Schemata, Konsequenzen und der Verlauf von "+selected+" werden entfernt.","delclientOk",selected); break;
+    case "delclientOk":
+      delete store.clients[v]; selected=null; save(); closeModal(); renderMain(); toast("Profil gelöscht"); break;
+    case "export": doExport(); break;
+    case "importbtn": document.getElementById("importFile").click(); break;
+    case "resetpin": store.pinHash=null; save(); view="pin"; render(); break;
+    case "wipe":
+      confirmSheet("Alle Daten löschen","Sämtliche Profile und die PIN werden aus diesem Browser entfernt.","wipeOk",""); break;
+    case "wipeOk":
+      store={clients:{},pinHash:null}; try{localStorage.removeItem(KEY)}catch(e){}
+      selected=null; closeModal(); view="pin"; render(); break;
+  }
+}
+
+app.addEventListener("click",e=>{
+  const t=e.target.closest("[data-act]"); if(!t) return;
+  if(t.tagName==="FORM") return;
+  e.preventDefault(); handle(t.dataset.act, t.dataset.v, t);
+});
+app.addEventListener("submit",e=>{
+  const g=e.target.closest("[data-act='addga']");
+  if(g){
+    e.preventDefault();
+    const inp=g.querySelector("input"), txt=inp.value.trim(), kind=g.dataset.v;
+    if(!txt||!selected) return;
+    store.clients[selected][kind].push({id:uid(),text:txt,created:Date.now()});
+    logIt(selected,(kind==="gedanken"?"Gedanke":"Affekt")+" ergänzt: „"+txt+"“");
+    save(); renderMain();
+    const again=document.querySelector(`[data-act='addga'][data-v='${kind}'] input`);
+    if(again) again.focus();
+    return;
+  }
+  const f=e.target.closest("[data-act='addclient']"); if(!f) return;
+  e.preventDefault();
+  const inp=document.getElementById("newCode");
+  const code=normCode(inp.value);
+  if(!code){ toast("Bitte ein Pseudonym eingeben"); return; }
+  if(store.clients[code]){ toast("Pseudonym "+code+" gibt es schon"); return; }
+  store.clients[code]=newClient();
+  store.clients[code].log.push({ts:Date.now(), t:"Profil angelegt"});
+  selected=code; sub="bild"; save(); renderMain(); toast("Profil "+code+" angelegt");
+});
+app.addEventListener("input",e=>{
+  if(e.target.id==="newCode"){ const p=e.target.selectionStart; e.target.value=normCode(e.target.value); e.target.setSelectionRange(p,p); }
+});
+app.addEventListener("change",e=>{
+  if(e.target.id!=="importFile") return;
+  const f=e.target.files[0]; if(!f) return;
+  const r=new FileReader();
+  r.onload=()=>{
+    try{
+      const data=JSON.parse(r.result);
+      if(!data || typeof data.clients!=="object") throw new Error("bad");
+      let n=0;
+      Object.entries(data.clients).forEach(([k,v])=>{
+        let key=k; while(store.clients[key]) key=key+"-2";
+        store.clients[key]=v; n++;
+      });
+      save(); renderMain(); toast(n+" Profil"+(n===1?"":"e")+" importiert");
+    }catch(err){ toast("Die Datei ließ sich nicht lesen – erwartet wird ein Export dieser App."); }
+  };
+  r.readAsText(f);
+});
+modal.addEventListener("click",e=>{
+  const t=e.target.closest("[data-act]");
+  if(!t){ if(e.target.classList.contains("scrim")) closeModal(); return; }
+  e.preventDefault(); handle(t.dataset.act, t.dataset.v, t);
+});
+document.addEventListener("keydown",e=>{ if(e.key==="Escape") closeModal(); });
+
+async function doExport(){
+  const data=JSON.stringify(store,null,2);
+  const name="therapie-"+new Date().toISOString().slice(0,10)+".json";
+  let dl=null;
+  try{ dl=await (window.claude&&window.claude.use?window.claude.use("downloads"):null); }catch(e){}
+  if(dl){
+    try{ await dl.save({filename:name, data}); toast("Export gespeichert"); return; }
+    catch(e){ /* abgelehnt oder nicht möglich – Fallback unten */ }
+  }
+  try{
+    const url=URL.createObjectURL(new Blob([data],{type:"application/json"}));
+    const a=document.createElement("a"); a.href=url; a.download=name;
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(()=>URL.revokeObjectURL(url),2000);
+    toast("Export heruntergeladen"); return;
+  }catch(e){}
+  sheet(`<h3>Export</h3>
+    <p class="muted" style="font-size:.93rem">Der Browser erlaubt hier kein direktes Speichern. Kopieren Sie den Text und legen Sie ihn als <span class="num">${esc(name)}</span> ab.</p>
+    <textarea class="field" id="expbox" style="min-height:220px;font-family:var(--mono);font-size:.8rem">${esc(data)}</textarea>
+    <div class="spread"><button class="btn ghost" data-act="close">Schließen</button>
+    <button class="btn primary" id="copyExp">Kopieren</button></div>`);
+  modal.querySelector("#copyExp").onclick=async ()=>{
+    const ta=modal.querySelector("#expbox"); ta.select();
+    try{ await navigator.clipboard.writeText(data); toast("In die Zwischenablage kopiert"); }
+    catch(e){ toast("Bitte mit Strg/Cmd + C kopieren"); }
+  };
+}
+
+/* ================= Start ================= */
+load();
+view="pin";
+render();
+try{ document.fonts && document.fonts.ready.then(()=>{ if(tab==="clients"&&sub==="bild") drawCloud(); }); }catch(e){}
+})();
+</script>
+
+</body>
+</html>
