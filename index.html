@@ -140,22 +140,30 @@ textarea.field{min-height:92px;resize:vertical;line-height:1.45}
 
 /* ---------- Schema-Bild ---------- */
 .bild{display:grid;grid-template-columns:minmax(0,1fr) 250px;gap:18px;align-items:start}
-@media (max-width:980px){.bild{grid-template-columns:1fr}}
-.scene{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-.figure{width:104px;flex:none;color:var(--ink-paper);transform:translateY(26%)}
+@media (max-width:1000px){.bild{grid-template-columns:1fr}}
+
+/* Zwei gleich aufgebaute Zeilen; die Figur haengt am Zeilenuebergang,
+   damit der Kopf unabhaengig von der Textmenge immer zwischen den Blasen steht. */
+.scene{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px 10px;align-items:start}
+.bubbles{display:contents}
+.figure{grid-column:1;grid-row:1;align-self:end;transform:translateY(80%);
+  width:104px;color:var(--ink-paper);pointer-events:none}
 .figure svg{width:100%;height:auto;display:block}
-.bubbles{flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:10px}
-.brow{display:flex;align-items:center;gap:8px}
+.brow{display:flex;align-items:center;gap:8px;min-width:0}
+.brow.up{grid-column:2;grid-row:1}
+.brow.down{grid-column:2;grid-row:2}
 .dots{display:flex;flex:none}
-.dots i{display:block;border:2.2px solid var(--bub-line,var(--ink-paper));border-radius:50%;background:var(--surface);margin-block:3px}
+.dots i{display:block;border:2.2px solid var(--bub-line,var(--ink-paper));border-radius:50%;
+  background:var(--surface);margin-block:3px}
 .dots i:nth-child(1){width:6px;height:6px}
 .dots i:nth-child(2){width:9px;height:9px;margin-left:6px}
 .dots i:nth-child(3){width:13px;height:13px;margin-left:13px}
-.brow.up .dots{flex-direction:column-reverse;align-self:flex-end;padding-bottom:6px}
-.brow.down .dots{flex-direction:column;align-self:flex-start;padding-top:6px}
+.brow.up .dots{flex-direction:column-reverse;align-self:flex-end;padding-bottom:4px}
+.brow.down .dots{flex-direction:column;align-self:flex-start;padding-top:4px}
 .brow.up{--bub-line:var(--c-skn)}
 .brow.down{--bub-line:var(--c-bkn)}
-.cloud{position:relative;flex:1 1 260px;min-width:0;min-height:190px;display:flex;align-items:center;justify-content:center;padding:58px 80px}
+.cloud{position:relative;flex:1 1 auto;min-width:0;min-height:190px;display:flex;
+  align-items:center;justify-content:center;padding:58px 80px}
 .cloud svg{position:absolute;inset:0;width:100%;height:100%}
 .cloud .fill{fill:var(--bub-bg);stroke:var(--bub-line);stroke-width:2.2;stroke-linejoin:round}
 .cloud[data-bub="self"]{--bub-line:var(--c-skn);--bub-bg:var(--bub-self-bg)}
@@ -168,10 +176,25 @@ textarea.field{min-height:92px;resize:vertical;line-height:1.45}
 .thought .box{border:2px solid currentColor;border-radius:5px;background:var(--surface);padding:7px 11px;
   width:100%;text-align:left;font-size:.99rem;line-height:1.35;min-height:46px;color:var(--ink);
   display:flex;flex-direction:column;gap:4px;transition:box-shadow .12s}
-.thought .box:hover{box-shadow:0 2px 0 0 var(--bub-line)}
+button.box:hover{box-shadow:0 2px 0 0 var(--bub-line)}
 .thought .box em{font-style:normal;color:var(--ink-3);font-size:.9rem}
 .thought .box .more{font-size:.86rem;color:var(--ink-2);border-top:1px dashed var(--line);padding-top:4px}
-@media (max-width:560px){.cloud{padding:46px 40px;min-height:172px}.figure{width:78px;transform:none}.cloud-cap{font-size:.64rem}}
+@media (max-width:900px){
+  .cloud{padding:52px 58px;min-height:178px}
+  .cloud-inner{max-width:100%}
+}
+/* Hochkant am Telefon: alles untereinander, Gedankenpunkte quer */
+@media (max-width:620px){
+  .scene{grid-template-columns:1fr}
+  .figure{grid-column:1;grid-row:1;justify-self:center;align-self:center;transform:none;width:82px}
+  .brow.up{grid-column:1;grid-row:2}
+  .brow.down{grid-column:1;grid-row:3}
+  .brow{flex-direction:column;align-items:center;gap:2px}
+  .brow.up .dots,.brow.down .dots{flex-direction:row;align-self:center;align-items:flex-end;padding:0}
+  .dots i{margin-block:0;margin-left:0!important;margin-inline:2px}
+  .cloud{padding:44px 34px;min-height:168px;width:100%}
+  .cloud-cap{font-size:.64rem}
+}
 /* Gedanken & Affekt */
 .gaflow{display:grid;grid-template-columns:minmax(0,1fr) 92px minmax(0,1fr);gap:0 10px;align-items:start;margin-top:2px}
 .arrow-in{grid-column:3;grid-row:1;color:var(--ink-paper);width:74px;justify-self:start;margin-left:8%}
@@ -190,11 +213,11 @@ textarea.field{min-height:92px;resize:vertical;line-height:1.45}
 .ga form{display:flex;gap:6px;margin-top:5px;max-width:340px}
 .ga form input{min-height:38px;padding:.25rem .6rem;font-size:.92rem}
 .ga form button{min-height:38px}
-@media (max-width:760px){
+@media (max-width:900px){
   .gaflow{grid-template-columns:1fr;gap:6px}
-  .arrow-in{grid-column:1;grid-row:1;margin-left:4px;width:58px}
+  .arrow-in{grid-column:1;grid-row:1;justify-self:center;margin:0;width:56px}
   .ga.aff{grid-column:1;grid-row:2}
-  .arrow-left{grid-column:1;grid-row:3;margin:10px 0;justify-self:center;transform:rotate(90deg);width:66px}
+  .arrow-left{grid-column:1;grid-row:3;margin:12px 0;justify-self:center;transform:rotate(-90deg);width:66px}
   .ga.ged{grid-column:1;grid-row:4}
   .ga li .x{opacity:1}
 }
@@ -263,6 +286,25 @@ textarea.field{min-height:92px;resize:vertical;line-height:1.45}
 .logday .d{font-family:var(--mono);font-size:.85rem;color:var(--ink-3)}
 .logday ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:5px;font-size:.94rem}
 .logday li{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+
+/* ---------- Klientenansicht ---------- */
+.pres-wrap{max-width:1400px}
+.pres{padding:20px 24px 28px}
+.pres .bild{grid-template-columns:minmax(0,1fr) 290px;gap:26px}
+@media (max-width:1000px){.pres .bild{grid-template-columns:1fr}}
+.pres .figure{width:122px}
+.pres .cloud{min-height:210px;padding:62px 86px}
+.pres .cloud-inner{max-width:390px;gap:14px}
+.pres .cloud-cap{font-size:.78rem}
+.pres .thought .lab{font-size:.95rem}
+.pres .thought .box{font-size:1.18rem;min-height:56px;padding:10px 14px}
+.pres .sbox .cap{font-size:1rem}
+.pres .sbox li,.pres .sbox .stem{font-size:1.08rem}
+.pres .ga h4{font-size:1.05rem}
+.pres .ga li{font-size:1.12rem}
+.pres .gaflow{margin-top:10px}
+@media (max-width:900px){.pres .cloud{padding:54px 60px;min-height:190px}.pres .cloud-inner{max-width:100%}}
+@media (max-width:620px){.pres .figure{width:92px}.pres .thought .box{font-size:1.05rem}}
 
 /* ---------- Modal / Toast ---------- */
 .scrim{position:fixed;inset:0;background:rgba(10,20,19,.55);display:flex;align-items:flex-start;justify-content:center;
@@ -438,6 +480,8 @@ const LIB = [
 ];
 const LIBK = Object.fromEntries(LIB.map(l=>[l.k,l]));
 
+const BUILD = "2026-09-21 · 2";
+
 /* ================= Speicher ================= */
 const KEY="schemaprofil.v1";
 let store={clients:{},pinHash:null};
@@ -574,8 +618,31 @@ let view="pin", tab="clients", sub="bild", selected=null, libFilter="alle";
 function go(v){ view=v; render(); window.scrollTo(0,0); }
 function render(){
   if(view==="pin") return renderPin();
+  if(view==="show") return renderShow();
   renderMain();
 }
+const fsOk=()=>{try{return !!(document.fullscreenEnabled&&document.documentElement.requestFullscreen)}catch(e){return false}};
+async function toggleFs(){
+  try{
+    if(document.fullscreenElement) await document.exitFullscreen();
+    else await document.documentElement.requestFullscreen({navigationUI:"hide"});
+  }catch(e){ toast("Vollbild wird auf diesem Gerät nicht unterstützt"); }
+}
+function renderShow(){
+  if(!selected||!store.clients[selected]){ view="main"; return renderMain(); }
+  app.innerHTML=`<div class="wrap pres-wrap">
+    <div class="topbar">
+      ${brandHTML()}
+      <div class="row">
+        ${fsOk()?`<button class="btn" data-act="fs">${document.fullscreenElement?"Vollbild beenden":"Vollbild"}</button>`:""}
+        <button class="btn primary" data-act="endshow">Ansicht beenden</button>
+      </div>
+    </div>
+    <section class="panel pres">${bildHTML(true)}</section>
+  </div>`;
+  drawCloud();
+}
+document.addEventListener("fullscreenchange",()=>{ if(view==="show") renderShow(); });
 
 /* ================= PIN ================= */
 function renderPin(){
@@ -675,7 +742,7 @@ function detailHTML(){
   const c=store.clients[selected];
   const subs=[["bild","Schema-Bild"],["schemata","Schemata"],["kons","Konsequenzen"],["motive","Motive & Muster"],["verlauf","Verlauf"]];
   let inner="";
-  if(sub==="bild") inner=bildHTML();
+  if(sub==="bild") inner=bildHTML(false);
   else if(sub==="schemata") inner=schemataHTML();
   else if(sub==="kons") inner=konsHTML();
   else if(sub==="motive") inner=motiveHTML();
@@ -684,6 +751,7 @@ function detailHTML(){
     <div class="detail-head">
       <div><span class="eyebrow">Profil · seit ${fmtDate(c.created)}</span><h2>${esc(selected)}</h2></div>
       <div class="row">
+        ${sub==="bild"?`<button class="btn primary small" data-act="showbild">Klienten zeigen</button>`:""}
         <button class="btn small" data-act="print">Drucken</button>
         <button class="btn small danger" data-act="delclient">Profil löschen</button>
       </div>
@@ -702,17 +770,18 @@ function leadOf(cat){
   const lead=all.filter(s=>s.lead);
   return {shown:(lead.length?lead:all.slice(0,1)), rest:all.length-(lead.length?lead.length:Math.min(1,all.length))};
 }
-function bubbleHTML(cat){
+function bubbleHTML(cat,pres){
   const C=CAT[cat], {shown,rest}=leadOf(cat);
   const body=shown.length
     ? shown.map(s=>`<span>${esc(s.text)}</span>`).join("")
-    : `<em>noch kein ${C.short}-Schema erfasst</em>`;
+    : (pres?"" : `<em>noch kein ${C.short}-Schema erfasst</em>`);
+  if(pres && !shown.length) return "";
+  const extra=(!pres&&rest>0)?`<span class="more">+ ${rest} weitere${rest===1?"s":""} ${C.short}-Schema${rest===1?"":"ta"}</span>`:"";
   return `<div class="thought ${C.cls}">
     <span class="lab">${C.short}</span>
-    <button class="box" data-act="pickLead" data-v="${cat}" title="Welches ${C.short}-Schema soll im Bild stehen?">
-      ${body}
-      ${rest>0?`<span class="more">+ ${rest} weitere${rest===1?"s":""} ${C.short}-Schema${rest===1?"":"ta"}</span>`:""}
-    </button>
+    ${pres
+      ? `<div class="box">${body}</div>`
+      : `<button class="box" data-act="pickLead" data-v="${cat}" title="Welches ${C.short}-Schema soll im Bild stehen?">${body}${extra}</button>`}
   </div>`;
 }
 function figureSVG(){
@@ -733,21 +802,21 @@ function arrowSVG(kind){
     ? `<svg viewBox="0 0 76 96" ${a}><path d="M8 5 C24 27 42 54 59 81"/><path d="M42 76 L62 87 L55 65"/></svg>`
     : `<svg viewBox="0 0 88 22" ${a}><path d="M84 11 C60 12 34 11 8 11"/><path d="M25 3 L6 11 L25 19"/></svg>`;
 }
-function gaColumn(kind,label,items){
+function gaColumn(kind,label,items,pres){
   const cls=kind==="gedanken"?"ged":"aff";
   const ph=kind==="gedanken"?"„Wieso schaffe ich das nicht?“":"Gefühl oder Körperempfindung";
   return `<div class="ga ${cls}">
     <h4>${label}</h4>
-    ${items.length?`<ul>${items.map(i=>`<li><span>${esc(i.text)}</span>
-      <button class="btn small ghost danger x" data-act="delga" data-v="${kind}|${i.id}" aria-label="Eintrag löschen">×</button></li>`).join("")}</ul>`
-      :`<p class="muted" style="font-size:.9rem">noch nichts erfasst</p>`}
-    <form data-act="addga" data-v="${kind}" autocomplete="off">
+    ${items.length?`<ul>${items.map(i=>`<li><span>${esc(i.text)}</span>${pres?"":
+      `<button class="btn small ghost danger x" data-act="delga" data-v="${kind}|${i.id}" aria-label="Eintrag löschen">×</button>`}</li>`).join("")}</ul>`
+      :(pres?"":`<p class="muted" style="font-size:.9rem">noch nichts erfasst</p>`)}
+    ${pres?"":`<form data-act="addga" data-v="${kind}" autocomplete="off">
       <input class="field" placeholder="${esc(ph)}" aria-label="${esc(label)} ergänzen" maxlength="160">
       <button class="btn small">+</button>
-    </form>
+    </form>`}
   </div>`;
 }
-function bildHTML(){
+function bildHTML(pres){
   const c=store.clients[selected];
   const norms=schemasOf(selected,"norm"), regeln=schemasOf(selected,"regel");
   const selfCats=["sk-"].concat(schemasOf(selected,"sk+").length?["sk+"]:[]);
@@ -763,7 +832,7 @@ function bildHTML(){
               <svg preserveAspectRatio="none" aria-hidden="true"><path class="fill" d=""/></svg>
               <div class="cloud-inner">
                 <span class="cloud-cap">Selbstkonzept</span>
-                ${selfCats.map(bubbleHTML).join("")}
+                ${selfCats.map(k=>bubbleHTML(k,pres)).join("")}
               </div>
             </div>
           </div>
@@ -773,7 +842,7 @@ function bildHTML(){
               <svg preserveAspectRatio="none" aria-hidden="true"><path class="fill" d=""/></svg>
               <div class="cloud-inner">
                 <span class="cloud-cap">Beziehungskonzept</span>
-                ${relCats.map(bubbleHTML).join("")}
+                ${relCats.map(k=>bubbleHTML(k,pres)).join("")}
               </div>
             </div>
           </div>
@@ -781,32 +850,32 @@ function bildHTML(){
       </div>
       <div class="gaflow">
         <div class="arrow-in">${arrowSVG("in")}</div>
-        ${gaColumn("gedanken","Gedanken",c.gedanken)}
+        ${gaColumn("gedanken","Gedanken",c.gedanken,pres)}
         <div class="arrow-left">${arrowSVG("left")}</div>
-        ${gaColumn("affekt","Affekt",c.affekt)}
+        ${gaColumn("affekt","Affekt",c.affekt,pres)}
       </div>
-      <div class="bild-foot">
+      ${pres?"":`<div class="bild-foot">
         <span class="muted" style="font-size:.88rem;flex-basis:100%">Ein Klick auf einen Kasten wählt, welches Schema in der Blase steht.</span>
         <button class="btn small" data-act="new" data-v="sk-">SK− ergänzen</button>
         <button class="btn small" data-act="new" data-v="bk-">BK− ergänzen</button>
         <button class="btn small ghost" data-act="new" data-v="sk+">SK+</button>
         <button class="btn small ghost" data-act="new" data-v="bk+">BK+</button>
-      </div>
+      </div>`}
     </div>
     <div class="side-boxes">
       <div class="sbox">
         <span class="cap c-norm">NORMEN</span>
         <p class="stem">Ich sollte …</p>
         ${norms.length?`<ul>${norms.map(s=>`<li>${esc(s.text)}</li>`).join("")}</ul>`
-          :`<p class="muted" style="font-size:.9rem">noch nichts erfasst</p>`}
-        <button class="btn small ghost" style="margin-top:8px;padding-left:0" data-act="new" data-v="norm">+ Norm</button>
+          :(pres?"":`<p class="muted" style="font-size:.9rem">noch nichts erfasst</p>`)}
+        ${pres?"":`<button class="btn small ghost" style="margin-top:8px;padding-left:0" data-act="new" data-v="norm">+ Norm</button>`}
       </div>
       <div class="sbox">
         <span class="cap c-regel">REGELN</span>
         <p class="stem">Er / sie / es / man sollte …</p>
         ${regeln.length?`<ul>${regeln.map(s=>`<li>${esc(s.text)}</li>`).join("")}</ul>`
-          :`<p class="muted" style="font-size:.9rem">noch nichts erfasst</p>`}
-        <button class="btn small ghost" style="margin-top:8px;padding-left:0" data-act="new" data-v="regel">+ Regel</button>
+          :(pres?"":`<p class="muted" style="font-size:.9rem">noch nichts erfasst</p>`)}
+        ${pres?"":`<button class="btn small ghost" style="margin-top:8px;padding-left:0" data-act="new" data-v="regel">+ Regel</button>`}
       </div>
     </div>
   </div>`;
@@ -844,9 +913,10 @@ function drawCloud(){
 }
 let ro=null;
 try{
-  ro=new ResizeObserver(()=>{ if(tab==="clients"&&sub==="bild") drawCloud(); });
+  ro=new ResizeObserver(()=>drawCloud());
 }catch(e){}
-window.addEventListener("resize",()=>{ if(tab==="clients"&&sub==="bild") drawCloud(); });
+window.addEventListener("resize",drawCloud);
+window.addEventListener("orientationchange",()=>setTimeout(drawCloud,250));
 
 /* ---------- Schemata ---------- */
 function schemaCard(s){
@@ -1013,6 +1083,10 @@ function datenHTML(){
   const s=Object.keys(store.clients).reduce((a,c)=>a+store.clients[c].schemas.length,0);
   return `<section class="panel settings">
     <section>
+      <h3>Fassung</h3>
+      <p>Diese App läuft in der Fassung <span class="num">${esc(BUILD)}</span>. Weicht die Angabe auf zwei Geräten voneinander ab, hat eines davon noch eine ältere Version im Speicher – dann die Seite einmal neu laden.</p>
+    </section>
+    <section>
       <h3>Wo die Daten liegen</h3>
       <p>Alle Profile liegen ausschließlich im Speicher dieses Browsers auf diesem Gerät. Nichts wird übertragen, nichts liegt auf einem Server. Ein anderer Browser oder ein anderes Gerät zeigt eine leere App.</p>
       <p><strong>Zurzeit gespeichert:</strong> ${n} Profil${n===1?"":"e"}, ${s} Schemata, ${Object.keys(store.clients).reduce((a,c)=>a+consCount(c),0)} Konsequenzen.</p>
@@ -1120,6 +1194,9 @@ function handle(a,v,el){
     case "sel": selected=v; sub="bild"; renderMain(); break;
     case "lock": view="pin"; closeModal(); render(); break;
     case "print": window.print(); break;
+    case "showbild": closeModal(); view="show"; render(); window.scrollTo(0,0); break;
+    case "endshow": view="main"; render(); window.scrollTo(0,0); break;
+    case "fs": toggleFs(); break;
     case "libfilter": libFilter=v; renderMain(); break;
 
     case "new": closeModal(); schemaEditor(null,v); break;
@@ -1281,7 +1358,11 @@ modal.addEventListener("click",e=>{
   if(!t){ if(e.target.classList.contains("scrim")) closeModal(); return; }
   e.preventDefault(); handle(t.dataset.act, t.dataset.v, t);
 });
-document.addEventListener("keydown",e=>{ if(e.key==="Escape") closeModal(); });
+document.addEventListener("keydown",e=>{
+  if(e.key!=="Escape") return;
+  if(modal.innerHTML){ closeModal(); return; }
+  if(view==="show"&&!document.fullscreenElement){ view="main"; render(); }
+});
 
 async function doExport(){
   const data=JSON.stringify(store,null,2);
@@ -1315,16 +1396,13 @@ async function doExport(){
 load();
 view="pin";
 render();
-try{ document.fonts && document.fonts.ready.then(()=>{ if(tab==="clients"&&sub==="bild") drawCloud(); }); }catch(e){}
+try{ document.fonts && document.fonts.ready.then(drawCloud); }catch(e){}
 })();
 </script>
 
 <script>
-/* Installierbarkeit und Offline-Betrieb */
 if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker.register("sw.js").catch(() => {});
-  });
+  window.addEventListener("load", () => { navigator.serviceWorker.register("sw.js").catch(() => {}); });
 }
 </script>
 </body>

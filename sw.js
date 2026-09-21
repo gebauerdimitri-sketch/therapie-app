@@ -1,5 +1,5 @@
 /* Service Worker – macht die App offline verfügbar und installierbar. */
-const VERSION = "therapie-v1";
+const VERSION = "therapie-v2";
 const SHELL = ["./", "index.html", "manifest.webmanifest", "icon-192.png", "icon-512.png"];
 
 self.addEventListener("install", e => {
@@ -21,7 +21,7 @@ self.addEventListener("fetch", e => {
   // Seitenaufrufe: erst Netz (damit Aktualisierungen ankommen), sonst Cache.
   if (req.mode === "navigate") {
     e.respondWith(
-      fetch(req)
+      fetch(new Request(req.url, { cache: "no-store", credentials: "same-origin" }))
         .then(res => {
           const copy = res.clone();
           caches.open(VERSION).then(c => c.put("index.html", copy)).catch(() => {});
