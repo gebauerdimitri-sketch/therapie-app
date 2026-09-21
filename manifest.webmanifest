@@ -1,0 +1,21 @@
+{
+  "name": "Therapie – Praxis Gebauer",
+  "short_name": "Therapie",
+  "description": "Schemaarbeit im Therapieverlauf: Schema-Bild, Gedanken und Affekt, Konsequenzen.",
+  "lang": "de",
+  "dir": "ltr",
+  "start_url": "./",
+  "scope": "./",
+  "id": "/therapie-app/",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "any",
+  "background_color": "#edf1ef",
+  "theme_color": "#2d5f5a",
+  "categories": ["health", "medical", "productivity"],
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

@@ -5,18 +5,27 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="description" content="Schemaarbeit im Therapieverlauf: pseudonyme Klientenprofile, Schema-Bild, Gedanken und Affekt, Konsequenzen.">
 <meta name="robots" content="noindex">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cg fill='none' stroke='%232d5f5a' stroke-width='28' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='256' cy='256' r='240'/%3E%3Cpath d='M101 153V262q0 14 14 14H205q14 0 14 14V436'/%3E%3Cpath d='M411 153V262q0 14-14 14H307q-14 0-14 14V436'/%3E%3Cpath d='M256 168V436'/%3E%3C/g%3E%3C/svg%3E">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#edf1ef">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#111716">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="application-name" content="Therapie">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Therapie">
+<link rel="icon" href="icon-192.png" sizes="192x192" type="image/png">
+<link rel="icon" href="icon-512.png" sizes="512x512" type="image/png">
+<link rel="apple-touch-icon" href="icon-192.png">
 <style>
 :root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
-body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}
+body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413;
+  -webkit-text-size-adjust:100%;overscroll-behavior-y:none}
 img{max-width:100%}
 [hidden]:not([hidden=until-found i]){display:none!important}
 </style>
 </head>
 <body>
 <title>Therapie – Praxis Gebauer</title>
-<meta name="theme-color" content="#2d5f5a">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@500&display=swap">
@@ -1310,5 +1319,13 @@ try{ document.fonts && document.fonts.ready.then(()=>{ if(tab==="clients"&&sub==
 })();
 </script>
 
+<script>
+/* Installierbarkeit und Offline-Betrieb */
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("sw.js").catch(() => {});
+  });
+}
+</script>
 </body>
 </html>
